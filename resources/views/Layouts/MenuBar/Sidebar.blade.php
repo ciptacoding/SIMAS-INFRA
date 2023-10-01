@@ -1,5 +1,5 @@
 <aside data-aos="fade-right" data-aos-duration="1200" class="navbar navbar-vertical navbar-expand-lg"
-   data-bs-theme="dark" style="padding-left: 15px">
+   data-bs-theme="dark" style="padding-left: 15px" id="sidebar">
    <div class="container-fluid">
 
       {{-- Hamburger Menu on device mobile and table --}}
@@ -10,16 +10,15 @@
       {{-- Hamburger Menu on device mobile and table --}}
 
       {{-- Logo start--}}
-      <div class="mt-2 text-center navbar-brand-autodark">
-         <div class="d-none d-md-flex justify-content-center">
+      <div class="mt-2 text-center">
+         <div class="mt-1 d-none d-md-flex justify-content-center">
             <a href="#">
-               <img src="./static/Logo_PMK.png" width="150" alt="Tabler" class="navbar-brand-image">
+               <img src="./static/Logo-TELKOM.png" width="500" alt="Tabler" class="navbar-brand-image">
             </a>
          </div>
-         <div class="mt-1 text-center d-flex flex-column">
+         <div class="mt-2 text-center d-flex flex-column">
             <span class="fs-1 fw-bold">SIMAS</span>
-            <span class="fs-5">PT. TELKOM</span>
-            <span class="fs-5">Area Bali Timur</span>
+            <span class="fs-5">PT. TELKOM AREA BALI TIMUR</span>
          </div>
       </div>
       {{-- Logo end--}}

@@ -31,6 +31,10 @@
       body {
          font-feature-settings: "cv03", "cv04", "cv11";
       }
+
+      #sidebar {
+         background-color: #dc4e41 !important;
+      }
    </style>
    <link href="./dist/css/tabler.min.css?1684106062" rel="stylesheet" />
    <link href="./dist/css/tabler-flags.min.css?1684106062" rel="stylesheet" />
