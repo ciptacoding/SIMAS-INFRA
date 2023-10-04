@@ -3,7 +3,7 @@
 
       <li class="nav-item">
          <a class="nav-link" href="#">
-            <span class="nav-link-icon d-md-none d-lg-inline-block">
+            <span class="nav-link-icon d-md-none d-lg-inline-block text-black">
                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-apps" width="24" height="24"
                   viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
                   stroke-linejoin="round">
@@ -15,7 +15,7 @@
                   <path d="M17 4l0 6"></path>
                </svg>
             </span>
-            <span class="nav-link-title fs-3">
+            <span class="nav-link-title fs-3 text-black">
                Dashboard
             </span>
          </a>
@@ -23,7 +23,7 @@
 
       <li class="nav-item">
          <a class="nav-link" href="#">
-            <span class="nav-link-icon d-md-none d-lg-inline-block">
+            <span class="nav-link-icon d-md-none d-lg-inline-block text-black">
                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-square" width="24"
                   height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                   stroke-linecap="round" stroke-linejoin="round">
@@ -33,7 +33,7 @@
                   <path d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14z"></path>
                </svg>
             </span>
-            <span class="nav-link-title fs-3">
+            <span class="nav-link-title fs-3 text-black">
                Pengguna
             </span>
          </a>
@@ -41,7 +41,7 @@
 
       <li class="nav-item">
          <a class="nav-link" href="#">
-            <span class="nav-link-icon d-md-none d-lg-inline-block">
+            <span class="nav-link-icon d-md-none d-lg-inline-block text-black">
                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-stats" width="25"
                   height="25" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                   stroke-linecap="round" stroke-linejoin="round">
@@ -54,7 +54,7 @@
                   <path d="M3 11h16"></path>
                </svg>
             </span>
-            <span class="nav-link-title fs-3">
+            <span class="nav-link-title fs-3 text-black">
                Periode UKM
             </span>
          </a>
@@ -62,7 +62,7 @@
 
       <li class="nav-item">
          <a class="nav-link" href="#">
-            <span class="nav-link-icon d-md-none d-lg-inline-block">
+            <span class="nav-link-icon d-md-none d-lg-inline-block text-black">
                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-adjustments-horizontal"
                   width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                   stroke-linecap="round" stroke-linejoin="round">
@@ -78,7 +78,7 @@
                   <path d="M19 18l1 0"></path>
                </svg>
             </span>
-            <span class="nav-link-title fs-3">
+            <span class="nav-link-title fs-3 text-black">
                Jenis Kegiatan
             </span>
          </a>
@@ -86,7 +86,7 @@
 
       <li class="nav-item">
          <a class="nav-link" href="#">
-            <span class="nav-link-icon d-md-none d-lg-inline-block">
+            <span class="nav-link-icon d-md-none d-lg-inline-block text-black">
                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="24" height="24"
                   viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
                   stroke-linejoin="round">
@@ -95,7 +95,7 @@
                   <path d="M3 7l9 6l9 -6"></path>
                </svg>
             </span>
-            <span class="nav-link-title fs-3">
+            <span class="nav-link-title fs-3 text-black">
                Surat Masuk
             </span>
          </a>
@@ -103,7 +103,7 @@
 
       <li class="nav-item">
          <a class="nav-link" href="#">
-            <span class="nav-link-icon d-md-none d-lg-inline-block">
+            <span class="nav-link-icon d-md-none d-lg-inline-block text-black">
                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail-forward" width="24"
                   height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                   stroke-linecap="round" stroke-linejoin="round">
@@ -114,7 +114,7 @@
                   <path d="M18 15l3 3l-3 3"></path>
                </svg>
             </span>
-            <span class="nav-link-title fs-3">
+            <span class="nav-link-title fs-3 text-black">
                Surat Keluar
             </span>
          </a>
@@ -122,7 +122,7 @@
 
       <li class="nav-item">
          <a class="nav-link" href="#">
-            <span class="nav-link-icon d-md-none d-lg-inline-block">
+            <span class="nav-link-icon d-md-none d-lg-inline-block text-black">
                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-article" width="24"
                   height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                   stroke-linecap="round" stroke-linejoin="round">
@@ -133,7 +133,7 @@
                   <path d="M7 16h10"></path>
                </svg>
             </span>
-            <span class="nav-link-title fs-3">
+            <span class="nav-link-title fs-3 text-black">
                Proposal
             </span>
          </a>
@@ -141,7 +141,7 @@
 
       <li class="nav-item">
          <a class="nav-link" href="#">
-            <span class="nav-link-icon d-md-none d-lg-inline-block">
+            <span class="nav-link-icon d-md-none d-lg-inline-block text-black">
                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-analytics" width="24"
                   height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                   stroke-linecap="round" stroke-linejoin="round">
@@ -153,7 +153,7 @@
                   <path d="M15 17l0 -3"></path>
                </svg>
             </span>
-            <span class="nav-link-title fs-3">
+            <span class="nav-link-title fs-3 text-black">
                LPJK
             </span>
          </a>
@@ -161,7 +161,7 @@
 
       <li class="nav-item">
          <a class="nav-link" href="#">
-            <span class="nav-link-icon d-md-none d-lg-inline-block">
+            <span class="nav-link-icon d-md-none d-lg-inline-block text-black">
                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list-check" width="24"
                   height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                   stroke-linecap="round" stroke-linejoin="round">
@@ -174,7 +174,7 @@
                   <path d="M11 18l9 0"></path>
                </svg>
             </span>
-            <span class="nav-link-title fs-3">
+            <span class="nav-link-title fs-3 text-black">
                Log Aktivitas
             </span>
          </a>
