@@ -16,8 +16,8 @@
             </a>
          </div>
          <div class="mt-2 text-center d-flex flex-column">
-            <span class="fs-1 fw-bold">SIMAS</span>
-            <span class="fs-5">PT. TELKOM AREA BALI TIMUR</span>
+            <span class="fs-1 fw-bold text-black">SIMAS</span>
+            <span class="fs-5 text-black fw-semibold">PT. TELKOM AREA BALI TIMUR</span>
          </div>
       </div>
       {{-- Logo end--}}
