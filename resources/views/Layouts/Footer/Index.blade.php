@@ -7,8 +7,7 @@
 						<a href="#" target="_blank" class="link-secondary">SISTEM INFORMASI MANAJEMEN ASET</a>
 					</li>
 					<li class="list-inline-item">
-						<a href="https://www.instagram.com/pmkstikombali/" target="_blank" class="link-secondary"
-							rel="noopener">
+						<a href="#" target="_blank" class="link-secondary" rel="noopener">
 							PT TELKOM INFRA AREA BALI TIMUR
 						</a>
 					</li>
