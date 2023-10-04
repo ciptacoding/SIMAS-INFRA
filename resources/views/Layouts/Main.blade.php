@@ -37,52 +37,49 @@
 
    <script src="{{ asset('dist/js/demo-theme.min.js?1684106062') }}"></script>
 
+   {{-- alert flash message--}}
+   {{-- <div class="position-absolute top-0 end-0" style="z-index: 100">
+      <x-notify::notify />
+   </div> --}}
+   {{-- alert flash message --}}
 
-   <div class="page" id="custom-loaders">
+   <!-- Sidebar -->
+   @include('Layouts.MenuBar.Sidebar')
+   <!--Sidebar-->
 
-      {{-- alert flash message--}}
-      {{-- <div class="position-absolute top-0 end-0" style="z-index: 100">
-         <x-notify::notify />
-      </div> --}}
-      {{-- alert flash message --}}
+   <!-- HeaderBar -->
+   @include('Layouts.HeaderBar.Index')
+   <!-- HeaderBar-->
 
-      <!-- Sidebar -->
-      @include('Layouts.MenuBar.Sidebar')
-      <!--Sidebar-->
+   <div class="page-wrapper">
 
-      <!-- HeaderBar -->
-      @include('Layouts.HeaderBar.Index')
-      <!-- HeaderBar-->
+      <!-- Page header -->
+      <div class="page-header d-print-none">
+         <div class="container-xl">
+            <div class="row g-2 align-items-center">
 
-      <div class="page-wrapper" data-aos="fade-up" data-aos-duration="1000">
+               {{-- page title --}}
+               @yield('Page-Title')
+               {{-- page title --}}
 
-         <!-- Page header -->
-         <div class="page-header d-print-none">
-            <div class="container-xl">
-               <div class="row g-2 align-items-center">
-
-                  {{-- page title --}}
-                  @yield('Page-Title')
-                  {{-- page title --}}
-
-                  <!-- Page title actions -->
-                  <div class="col-auto ms-auto d-print-none">
-                     @yield('Button-Add')
-                  </div>
+               <!-- Page title actions -->
+               <div class="col-auto ms-auto d-print-none">
+                  @yield('Button-Add')
                </div>
             </div>
          </div>
-         <!-- Page body -->
-         <div class="page-body">
-            <div class="container-xl">
-               @yield('Page-Body')
-            </div>
-         </div>
-
-         <!--Footer-->
-         @include('Layouts.Footer.Index')
-         <!--Footer-->
       </div>
+      <!-- Page body -->
+      <div class="page-body">
+         <div class="container-xl">
+            @yield('Page-Body')
+         </div>
+      </div>
+
+      <!--Footer-->
+      @include('Layouts.Footer.Index')
+      <!--Footer-->
+   </div>
    </div>
 
 

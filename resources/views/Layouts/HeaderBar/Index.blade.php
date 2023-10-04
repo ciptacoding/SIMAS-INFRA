@@ -1,4 +1,4 @@
-<header data-aos="fade-down" data-aos-duration="800" class="navbar navbar-expand-md d-none d-lg-flex d-print-none">
+<header class="navbar navbar-expand-md d-none d-lg-flex d-print-none">
 	<div class="container-xl">
 
 		{{-- Theme Button Toggle And Notificaiton Button On PC Device --}}

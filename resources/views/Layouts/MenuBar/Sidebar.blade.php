@@ -1,5 +1,4 @@
-<aside data-aos="fade-right" data-aos-duration="1200" class="navbar navbar-vertical navbar-expand-lg"
-   data-bs-theme="dark" style="padding-left: 15px" id="sidebar">
+<aside class="navbar navbar-vertical navbar-expand-lg" data-bs-theme="dark" style="padding-left: 15px" id="sidebar">
    <div class="container-fluid">
 
       {{-- Hamburger Menu on device mobile and table --}}
