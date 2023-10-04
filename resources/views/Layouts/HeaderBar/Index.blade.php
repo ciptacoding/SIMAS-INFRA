@@ -4,9 +4,6 @@
 		{{-- Theme Button Toggle And Notificaiton Button On PC Device --}}
 		<div class="navbar-nav flex-row order-md-last">
 			<div class="d-none d-md-flex">
-				{{-- theme button toggle --}}
-				@include('Layouts.Theme.Index')
-				{{-- theme button toggle --}}
 
 				{{-- Notification Bar--}}
 				@include('Layouts.Notification.Index')

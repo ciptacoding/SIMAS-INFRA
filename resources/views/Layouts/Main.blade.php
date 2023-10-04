@@ -14,20 +14,6 @@
          --tblr-font-sans-serif: 'Inter Var', -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
       }
 
-      .loading {
-         display: none;
-         /* Initially hide the loading container */
-         position: fixed;
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: 100%;
-         /* Semi-transparent background */
-         z-index: 9999;
-         /* Ensure it's on top of everything */
-         text-align: center;
-      }
-
       body {
          font-feature-settings: "cv03", "cv04", "cv11";
       }
@@ -36,11 +22,11 @@
          background-color: #dc4e41 !important;
       }
    </style>
-   <link href="./dist/css/tabler.min.css?1684106062" rel="stylesheet" />
-   <link href="./dist/css/tabler-flags.min.css?1684106062" rel="stylesheet" />
-   <link href="./dist/css/tabler-payments.min.css?1684106062" rel="stylesheet" />
-   <link href="./dist/css/tabler-vendors.min.css?1684106062" rel="stylesheet" />
-   <link href="./dist/css/demo.min.css?1684106062" rel="stylesheet" />
+   <link href="{{ asset('dist/css/tabler.min.css?1684106062') }}" rel="stylesheet" />
+   <link href="{{ asset('dist/css/tabler-flags.min.css?1684106062') }}" rel="stylesheet" />
+   <link href="{{ asset('dist/css/tabler-payments.min.css?1684106062') }}" rel="stylesheet" />
+   <link href="{{ asset('dist/css/tabler-vendors.min.css?1684106062') }}" rel="stylesheet" />
+   <link href="{{ asset('dist/css/demo.min.css?1684106062') }}" rel="stylesheet" />
    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
    @stack('styles')
@@ -49,7 +35,7 @@
 
 <body>
 
-   <script src="./dist/js/demo-theme.min.js?1684106062"></script>
+   <script src="{{ asset('dist/js/demo-theme.min.js?1684106062') }}"></script>
 
 
    <div class="page" id="custom-loaders">
@@ -108,13 +94,13 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
    <!-- Libs JS -->
-   <script src="./dist/libs/apexcharts/dist/apexcharts.min.js?1684106062" defer></script>
-   <script src="./dist/libs/jsvectormap/dist/js/jsvectormap.min.js?1684106062" defer></script>
-   <script src="./dist/libs/jsvectormap/dist/maps/world.js?1684106062" defer></script>
-   <script src="./dist/libs/jsvectormap/dist/maps/world-merc.js?1684106062" defer></script>
+   <script src="{{ asset('dist/libs/apexcharts/dist/apexcharts.min.js?1684106062') }}" defer></script>
+   <script src="{{ asset('dist/libs/jsvectormap/dist/js/jsvectormap.min.js?1684106062') }}" defer></script>
+   <script src="{{ asset('dist/libs/jsvectormap/dist/maps/world.js?1684106062') }}" defer></script>
+   <script src="{{ asset('dist/libs/jsvectormap/dist/maps/world-merc.js?1684106062') }}" defer></script>
    <!-- Tabler Core -->
-   <script src="./dist/js/tabler.min.js?1684106062" defer></script>
-   <script src="./dist/js/demo.min.js?1684106062" defer></script>
+   <script src="{{ asset('dist/js/tabler.min.js?1684106062') }}" defer></script>
+   <script src="{{ asset('dist/js/demo.min.js?1684106062') }}" defer></script>
    <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
    @stack('scripts')
