@@ -18,6 +18,6 @@ use App\Http\Controllers\DashboardController;
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/authenticate', [LoginController::class, 'authenticate'])->name('authenticate');
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware('auth')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('home');
 });
