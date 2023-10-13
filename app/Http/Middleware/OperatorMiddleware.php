@@ -15,6 +15,10 @@ class OperatorMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+        if ($request->user() && $request->user()->role_id === 2) {
+            return $next($request);
+        }
+
+        return redirect('/');
     }
 }
