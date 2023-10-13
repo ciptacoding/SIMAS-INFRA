@@ -106,7 +106,7 @@
             <div class="user-panel d-flex align-items-center" style="padding-right: -18px;">
                <div class="text-secondary d-none d-md-inline-block">
                   <span class="d-block" style="margin-bottom: -10px">{{ Auth::user()->username }}</span>
-                  <span class="text-xs">Super Admin</span>
+                  <span class="text-xs">{{ Auth::user()->role->nama }}</span>
                </div>
                <div class="image">
                   <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
