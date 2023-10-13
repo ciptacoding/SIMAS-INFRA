@@ -5,6 +5,8 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
+use App\Models\User;
+use App\Models\Role;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,11 +17,33 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        \App\Models\User::factory()->create([
-            'username' => 'hajinulhakim',
-            'email' => 'hakim@gmail.com',
+        Role::factory(1)->create();
+        Role::factory()->create([
+            'nama' => 'Operator',
+            'deskripsi' => 'Memiliki Sebagian Besar Hak Akses Pada Sistem Ini'
+        ]);
+        Role::factory()->create([
+            'nama' => 'Ketua TIm',
+            'deskripsi' => 'Memiliki Hak Akses Untuk Melakukan Beberapa Fitur Pada Sistem Ini'
+        ]);
+
+        User::factory(1)->create();
+        User::factory()->create([
+            'role_id' => 2,
+            'username' => 'bayuindriyanto',
+            'email' => 'bayu@gmail.com',
             'password' => 'password', //password
-            'whatsapp' => '085858038176',
+            'whatsapp' => '085858038671',
+            'foto' => null,
+            'remember_token' => Str::random(10),
+            'email_verified_at' => now(),
+        ]);
+        User::factory()->create([
+            'role_id' => 3,
+            'username' => 'cipta',
+            'email' => 'cipta@gmail.com',
+            'password' => 'password', //password
+            'whatsapp' => '085858038761',
             'foto' => null,
             'remember_token' => Str::random(10),
             'email_verified_at' => now(),
