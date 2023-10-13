@@ -13,7 +13,7 @@
    </ul>
 
    <!-- Right navbar links -->
-   <ul class="navbar-nav ml-auto">
+   <ul class="navbar-nav ml-auto d-flex align-items-center">
 
       <!-- Messages Dropdown Menu -->
       <li class="nav-item dropdown">
@@ -101,10 +101,12 @@
          </div>
       </li>
 
-      <li class="nav-item dropdown pl-2 pr-3">
-         <a href="nav-link" data-toggle="dropdown" href="#">
-            <div class="user-panel d-flex">
-               <div class="info">
+      <li class="nav-item dropdown pl-4 pr-3">
+         <a data-toggle="dropdown" href="#">
+            <div class="user-panel d-flex align-items-center" style="padding-right: -18px;">
+               <div class="text-secondary d-none d-md-inline-block">
+                  <span class="d-block" style="margin-bottom: -10px">{{ Auth::user()->username }}</span>
+                  <span class="text-xs">Super Admin</span>
                </div>
                <div class="image">
                   <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
@@ -120,11 +122,24 @@
                <span>Password</span>
             </a>
             <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
+            <a href="{{ route('logout') }}" onclick="handleLogout()" class="dropdown-item">
                <span>Logout</span>
             </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+               @csrf
+            </form>
          </div>
       </li>
 
    </ul>
 </nav>
+
+@push('scripts')
+<script>
+   function handleLogout()
+      {
+         event.preventDefault();
+         document.getElementById('logout-form').submit();
+      }
+</script>
+@endpush
