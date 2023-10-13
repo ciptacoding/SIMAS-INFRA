@@ -17,7 +17,16 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
-        return [];
+        return [
+            'role_id' => 1,
+            'username' => 'hajinulhakim',
+            'email' => 'hakim@gmail.com',
+            'password' => 'password', //password
+            'whatsapp' => '085858038176',
+            'foto' => null,
+            'remember_token' => Str::random(10),
+            'email_verified_at' => now(),
+        ];
     }
 
     /**
