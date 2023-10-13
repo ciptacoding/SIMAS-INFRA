@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
             'deskripsi' => 'Memiliki Sebagian Besar Hak Akses Pada Sistem Ini'
         ]);
         Role::factory()->create([
-            'nama' => 'Ketua TIm',
+            'nama' => 'Ketua Tim',
             'deskripsi' => 'Memiliki Hak Akses Untuk Melakukan Beberapa Fitur Pada Sistem Ini'
         ]);
 
