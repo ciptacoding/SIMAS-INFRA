@@ -15,6 +15,10 @@ class SuperAdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+        if ($request->user() && $request->user()->role_id === 1) {
+            return $next($request);
+        }
+
+        return redirect('/');
     }
 }
