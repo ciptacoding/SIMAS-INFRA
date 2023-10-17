@@ -8,6 +8,6 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('Layouts.Main');
+        return view('Pages.Dashboard.Index');
     }
 }
