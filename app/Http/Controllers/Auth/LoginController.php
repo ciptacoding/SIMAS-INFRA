@@ -12,7 +12,7 @@ class LoginController extends Controller
 {
     public function login()
     {
-        return view('Layouts.Guest');
+        return view('Pages.Auth.Login');
     }
 
     public function authenticate(Request $request): RedirectResponse
