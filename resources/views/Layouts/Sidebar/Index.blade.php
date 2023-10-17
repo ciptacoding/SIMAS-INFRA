@@ -20,29 +20,28 @@
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>
                      Dashboard
-
                   </p>
                </a>
             </li>
             <li class="nav-item">
-               <a href="pages/widgets.html" class="nav-link">
-                  <i class="nav-icon fas fa-th"></i>
+               <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-user-friends"></i>
                   <p>
                      Pengguna
                   </p>
                </a>
             </li>
             <li class="nav-item">
-               <a href="pages/widgets.html" class="nav-link">
-                  <i class="nav-icon fas fa-th"></i>
+               <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-broadcast-tower"></i>
                   <p>
                      Data Tower
                   </p>
                </a>
             </li>
             <li class="nav-item">
-               <a href="pages/widgets.html" class="nav-link">
-                  <i class="nav-icon fas fa-th"></i>
+               <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-satellite-dish"></i>
                   <p>
                      Aset Tower
                   </p>
@@ -50,17 +49,16 @@
             </li>
             <li class="nav-header">Eksternal</li>
             <li class="nav-item">
-               <a href="pages/calendar.html" class="nav-link">
-                  <i class="nav-icon far fa-calendar-alt"></i>
+               <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-cogs"></i>
                   <p>
                      Maintenance
-                     <span class="badge badge-info right">2</span>
                   </p>
                </a>
             </li>
             <li class="nav-item">
-               <a href="pages/calendar.html" class="nav-link">
-                  <i class="nav-icon far fa-calendar-alt"></i>
+               <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-bell"></i>
                   <p>
                      Kelola Notifikasi
                      <span class="badge badge-info right">2</span>
@@ -68,17 +66,16 @@
                </a>
             </li>
             <li class="nav-item">
-               <a href="pages/calendar.html" class="nav-link">
-                  <i class="nav-icon far fa-calendar-alt"></i>
+               <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-users-cog"></i>
                   <p>
                      Data Team
-                     <span class="badge badge-info right">2</span>
                   </p>
                </a>
             </li>
             <li class="nav-item">
                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-tree"></i>
+                  <i class="nav-icon fas fa-envelope-open-text"></i>
                   <p>
                      Data Laporan
                      <i class="fas fa-angle-left right"></i>
@@ -86,32 +83,32 @@
                </a>
                <ul class="nav nav-treeview">
                   <li class="nav-item">
-                     <a href="pages/UI/general.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
+                     <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-wrench"></i>
                         <p>Laporan Maintenance</p>
                      </a>
                   </li>
                   <li class="nav-item">
-                     <a href="pages/UI/icons.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
+                     <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-tools"></i>
                         <p>Laporan Sparepart</p>
                      </a>
                   </li>
                   <li class="nav-item">
-                     <a href="pages/UI/buttons.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
+                     <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-inbox"></i>
                         <p>Request Maintenance</p>
                      </a>
                   </li>
                   <li class="nav-item">
-                     <a href="pages/UI/sliders.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
+                     <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-wifi"></i>
                         <p>Laporan Lokasi Tower</p>
                      </a>
                   </li>
                   <li class="nav-item">
-                     <a href="pages/UI/modals.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
+                     <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-people-arrows"></i>
                         <p>Laporan Data Team</p>
                      </a>
                   </li>
