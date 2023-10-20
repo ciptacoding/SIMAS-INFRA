@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +16,14 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
+// Route for guest
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/authenticate', [LoginController::class, 'authenticate'])->name('authenticate');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('home');
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+    Route::get('/pengguna', [UserController::class, 'index'])->name('users.index');
 });
