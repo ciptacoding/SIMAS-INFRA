@@ -16,7 +16,8 @@
 
             <li class="nav-header">Internal</li>
             <li class="nav-item">
-               <a href="#" class="nav-link active">
+               <a href="{{ route('home') }}"
+                  class="nav-link {{ Route::currentRouteName() === 'home' ? 'active' : ' '}}">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>
                      Dashboard
@@ -24,7 +25,8 @@
                </a>
             </li>
             <li class="nav-item">
-               <a href="#" class="nav-link">
+               <a href="{{ route('users.index') }}"
+                  class="nav-link {{ Route::currentRouteName() === 'users.index' ? 'active' : ' '}}">
                   <i class="nav-icon fas fa-user-friends"></i>
                   <p>
                      Pengguna
