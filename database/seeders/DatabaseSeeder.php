@@ -34,6 +34,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'bayu@gmail.com',
             'password' => 'password', //password
             'whatsapp' => '085858038671',
+            'status' => true,
             'foto' => null,
             'remember_token' => Str::random(10),
             'email_verified_at' => now(),
@@ -44,6 +45,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'cipta@gmail.com',
             'password' => 'password', //password
             'whatsapp' => '085858038761',
+            'status' => true,
             'foto' => null,
             'remember_token' => Str::random(10),
             'email_verified_at' => now(),
