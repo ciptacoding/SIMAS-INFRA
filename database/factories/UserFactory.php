@@ -23,6 +23,7 @@ class UserFactory extends Factory
             'email' => 'hakim@gmail.com',
             'password' => 'password', //password
             'whatsapp' => '085858038176',
+            'status' => true,
             'foto' => null,
             'remember_token' => Str::random(10),
             'email_verified_at' => now(),
