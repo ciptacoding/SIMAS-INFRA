@@ -1,5 +1,9 @@
 @extends('Layouts.Main')
 
+@section('title')
+<h1 class="m-0">Dashboard</h1>
+@endsection
+
 @section('main-page')
 <!-- Small boxes (Stat box) -->
 <div class="row">
