@@ -1,11 +1,13 @@
 @extends('Layouts.Main')
 
+{{-- Page Title --}}
 @section('title')
 <h1 class="m-0">Pengguna</h1>
 @endsection
+{{-- Page Title --}}
 
+{{-- Main Page --}}
 @section('main-page')
-
 <div class="card">
    <div class="card-header">
       <h3 class="card-title">Tabel Data Pengguna</h3>
@@ -41,9 +43,10 @@
       </table>
    </div>
 </div>
-
 @endsection
+{{-- Main Page --}}
 
+{{-- Script Datatables --}}
 @push('scripts')
 <script>
    $(function () {
@@ -59,3 +62,4 @@
    });
 </script>
 @endpush
+{{-- Script Datatables --}}
