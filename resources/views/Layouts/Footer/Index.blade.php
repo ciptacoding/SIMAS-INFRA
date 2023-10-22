@@ -1,3 +1,4 @@
+{{-- section footer --}}
 <footer class="main-footer">
    <strong>Copyright &copy;2023 <a href="/">MOH HAJINUL HAKIM</a>.</strong>
    All rights reserved.
@@ -5,3 +6,4 @@
       <b>SIMAS Version</b> 1.0
    </div>
 </footer>
+{{-- section footer --}}
