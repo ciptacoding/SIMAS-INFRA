@@ -73,6 +73,8 @@
             <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
          </div>
       </li>
+      <!-- Messages Dropdown Menu -->
+
       <!-- Notifications Dropdown Menu -->
       <li class="nav-item dropdown">
          <a class="nav-link" data-toggle="dropdown" href="#">
@@ -100,6 +102,7 @@
             <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
          </div>
       </li>
+      <!-- Notifications Dropdown Menu -->
 
       <li class="nav-item dropdown pl-4 pr-3">
          <a data-toggle="dropdown" href="#">
