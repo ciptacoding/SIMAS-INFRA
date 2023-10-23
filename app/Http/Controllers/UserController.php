@@ -12,4 +12,12 @@ class UserController extends Controller
         $users = User::all();
         return view('Pages.Pengguna.Index', compact('users'));
     }
+
+    public function disabled(string $id)
+    {
+    }
+
+    public function activated(string $id)
+    {
+    }
 }
