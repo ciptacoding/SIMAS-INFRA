@@ -33,8 +33,19 @@
                <td>{{ $user->whatsapp }}</td>
                <td>{{ $user->status }}</td>
                <td>
-                  <button class="btn-danger rounded-lg">✖️</button>
-                  <button class="btn-success rounded-lg">✔️</button>
+                  @if ($user->status === 1)
+                  <form action="{{ route('disabled.pengguna', $user->id) }}" method="POST">
+                     @method('PATCH')
+                     @csrf
+                     <button type="submit" class="btn-danger rounded-lg">✖️</button>
+                  </form>
+                  @else
+                  <form action="{{ route('activated.pengguna', $user->id) }}" method="POST">
+                     @method('PATCH')
+                     @csrf
+                     <button type="submit" class="btn-success rounded-lg">✔️</button>
+                  </form>
+                  @endif
                </td>
 
             </tr>
