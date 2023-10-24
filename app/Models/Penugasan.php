@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Penugasan extends Model
 {
     use HasFactory;
+    protected $guarded = ['id'];
 
     // Reverse relationship between table penugasans and teams
     public function team(): BelongsTo
