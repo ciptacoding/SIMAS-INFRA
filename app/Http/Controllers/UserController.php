@@ -15,9 +15,21 @@ class UserController extends Controller
 
     public function disabled(string $id)
     {
+        $user = User::findOrFail($id);
+        $user->update([
+            'status' => false,
+        ]);
+
+        return redirect()->route('users.index');
     }
 
     public function activated(string $id)
     {
+        $user = User::findOrFail($id);
+        $user->update([
+            'status' => true,
+        ]);
+
+        return redirect()->route('users.index');
     }
 }
