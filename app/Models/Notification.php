@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Notification extends Model
 {
     use HasFactory;
+    protected $guarded = ['id'];
 
     // Reverse relationship between table notifications and users
     public function user(): BelongsTo
