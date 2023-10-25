@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Tower extends Model
 {
     use HasFactory;
+    protected $guarded = ['id'];
 
     // Relationship 1 to many between table towers and maintenances
     public function maintenances(): HasMany
