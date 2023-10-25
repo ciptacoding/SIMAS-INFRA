@@ -1,10 +1,17 @@
 @extends('Layouts.Main')
 
-{{-- Page Title --}}
-@section('title')
-<h1 class="m-0">Pengguna</h1>
+{{-- Add Button --}}
+@section('add-button')
+<button class="btn btn-primary rounded-lg">Tambah Pengguna</button>
 @endsection
-{{-- Page Title --}}
+{{-- Add Button --}}
+
+{{-- Breadcrumb --}}
+@section('breadcrumb')
+<li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+<li class="breadcrumb-item active" aria-current="page">Pengguna</li>
+@endsection
+{{-- Breadcrumb --}}
 
 {{-- Main Page --}}
 @section('main-page')
@@ -31,19 +38,27 @@
                <td>{{ $user->username }}</td>
                <td>{{ $user->email }}</td>
                <td>{{ $user->whatsapp }}</td>
-               <td>{{ $user->status }}</td>
+               <td>
+                  <span class="{{ $user->status === 1 ? 'badge badge-success' : 'badge badge-danger' }}">
+                     {{ $user->status === 1 ? 'Aktif' : 'Non-Active' }}
+                  </span>
+               </td>
                <td>
                   @if ($user->status === 1)
                   <form action="{{ route('disabled.pengguna', $user->id) }}" method="POST">
                      @method('PATCH')
                      @csrf
-                     <button type="submit" class="btn-danger rounded-lg">✖️</button>
+                     <button type="submit" class="btn-danger rounded-lg" title="Disabled user">
+                        <i class="fas fa-times fa-lg" style="color: #ffffff;"></i>
+                     </button>
                   </form>
                   @else
                   <form action="{{ route('activated.pengguna', $user->id) }}" method="POST">
                      @method('PATCH')
                      @csrf
-                     <button type="submit" class="btn-success rounded-lg">✔️</button>
+                     <button type="submit" class="btn-success rounded-lg" title="Activated user">
+                        <i class="fas fa-check fa-sm" style="color: #ffffff;"></i>
+                     </button>
                   </form>
                   @endif
                </td>
