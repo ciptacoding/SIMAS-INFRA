@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Team extends Model
 {
     use HasFactory;
+    protected $guarded = ['id'];
 
     // Reverse relationship between table teams and users
     public function user(): BelongsTo
