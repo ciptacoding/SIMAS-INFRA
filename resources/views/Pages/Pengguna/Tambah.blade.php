@@ -2,7 +2,7 @@
 
 {{-- Add Button --}}
 @section('add-button')
-<h4>Form Tambah Pengguna</h4>
+<h4>Tambah Pengguna</h4>
 @endsection
 {{-- Add Button --}}
 
@@ -17,16 +17,7 @@
 @section('main-page')
 <div class="card card-default">
    <div class="card-header">
-      <h3 class="card-title">Select2 (Default Theme)</h3>
-
-      <div class="card-tools">
-         <button type="button" class="btn btn-tool" data-card-widget="collapse">
-            <i class="fas fa-minus"></i>
-         </button>
-         <button type="button" class="btn btn-tool" data-card-widget="remove">
-            <i class="fas fa-times"></i>
-         </button>
-      </div>
+      <h3 class="card-title">Isi formulir dibawah ini</h3>
    </div>
    <!-- /.card-header -->
    <form action="">
@@ -34,23 +25,20 @@
          <div class="row">
             <div class="col-md-6">
                <div class="form-group">
-                  <label>Minimal</label>
-                  <select class="form-control select2bs4" style="width: 100%;">
-                     <option selected="selected">Select</option>
+                  <label>Role Pengguna</label>
+                  <select class="form-control" style="width: 100%;">
+                     <option value="">Pilih Role Pengguna</option>
                      <option>Alaska</option>
                      <option>California</option>
                      <option>Delaware</option>
-                     <option>Tennessee</option>
-                     <option>Texas</option>
-                     <option>Washington</option>
                   </select>
                </div>
             </div>
 
             <div class="col-md-6">
                <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  <label for="username">Username</label>
+                  <input type="text" class="form-control" id="username" name="username" placeholder="Masukkan username">
                </div>
             </div>
 
@@ -58,24 +46,39 @@
          <div class="row">
             <div class="col-md-6">
                <div class="form-group">
-                  <label for="exampleInputFile">File input</label>
-                  <div class="input-group">
-                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                     </div>
-                  </div>
+                  <label for="email">Email address</label>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan email">
                </div>
             </div>
 
             <div class="col-md-6">
                <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  <label for="whatsapp">Whatsapp</label>
+                  <input type="text" class="form-control" id="whatsapp" name="whatsapp"
+                     placeholder="Masukkan nomor Whatsapp">
                </div>
             </div>
          </div>
-         <button type="submit" class="btn btn-primary">Submit</button>
+         <div class="row">
+            <div class="col-md-1">
+               <div class="border" style="height: 85px; width: 85px; overflow:hidden">
+                  <img src="" alt="profile" id="preview" width="85" style="display: none">
+               </div>
+               <p class="text-center text-sm">Photo 1:1</p>
+            </div>
+            <div class="col-md-5">
+               <div class="form-group">
+                  <label for="exampleInputFile">Photo Profile</label>
+                  <div class="input-group">
+                     <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="selectImage">
+                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <button type="submit" class="btn btn-primary mt-2 pr-4 pl-4">Submit</button>
       </div>
    </form>
 </div>
@@ -86,14 +89,23 @@
 <script>
    $(document).ready(function() {
       //Initialize Select2 Elements
-      $('.select2').select2()
+      // $('.select2').select2()
       
-      // //Initialize Select2 Elements
+      //Initialize Select2 Elements
       $('.select2bs4').select2({
       theme: 'bootstrap4'
       })
 
       bsCustomFileInput.init();
    });
+
+   selectImage.onchange = () => {
+      preview = document.getElementById('preview');
+      preview.style.display = 'block';
+      const [file] = selectImage.files
+      if (file) {
+         preview.src = URL.createObjectURL(file)
+      }
+   }
 </script>
 @endpush
