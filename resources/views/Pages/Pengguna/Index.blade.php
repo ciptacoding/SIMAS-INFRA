@@ -2,7 +2,7 @@
 
 {{-- Add Button --}}
 @section('add-button')
-<button class="btn btn-primary rounded-lg">Tambah Pengguna</button>
+<a href="{{ route('tambah.pengguna') }}"><button class="btn btn-primary rounded-lg">Tambah Pengguna </button></a>
 @endsection
 {{-- Add Button --}}
 
