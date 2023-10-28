@@ -33,6 +33,9 @@
    <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
    <!-- summernote -->
    <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
+   <!-- select2 -->
+   <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
+   <link rel="stylesheet" href="{{ asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
 
    @stack('styles')
 </head>
@@ -109,6 +112,8 @@
    <script src="{{ asset('plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
    <script src="{{ asset('plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
    <script src="{{ asset('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+   <script src="{{ asset('plugins/select2/js/select2.full.min.js') }}"></script>
+   <script src="{{ asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
 
    <script>
       $.widget.bridge('uibutton', $.ui.button)
