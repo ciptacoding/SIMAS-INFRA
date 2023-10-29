@@ -112,7 +112,13 @@
                   <span class="text-xs">{{ Auth::user()->role->nama }}</span>
                </div>
                <div class="image">
-                  <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                  @if (Auth::user()->foto)
+                  <img src="{{ asset('storage/profiles/' . Auth::user()->foto) }}"
+                     style="height: 32px; object-fit:cover" class="overflow-hidden rounded-lg" alt="user-image">
+                  @else
+                  <img src="{{ asset('img/person.png') }}" style="height: 32px; object-fit:cover"
+                     class="overflow-hidden rounded-lg" alt="user-image">
+                  @endif
                </div>
             </div>
          </a>
