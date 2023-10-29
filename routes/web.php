@@ -29,4 +29,5 @@ Route::middleware('auth')->group(function () {
     Route::patch('/disabled-pengguna/{id}', [UserController::class, 'disabled'])->name('disabled.pengguna');
     Route::patch('/activated-pengguna/{id}', [UserController::class, 'activated'])->name('activated.pengguna');
     Route::get('/tambah-pengguna', [UserController::class, 'tambah'])->name('tambah.pengguna');
+    Route::post('/simpan-pengguna', [UserController::class, 'simpan'])->name('simpan.pengguna');
 });
