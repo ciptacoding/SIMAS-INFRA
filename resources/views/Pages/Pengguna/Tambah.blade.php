@@ -20,7 +20,8 @@
       <h3 class="card-title">Isi formulir dibawah ini</h3>
    </div>
    <!-- /.card-header -->
-   <form action="">
+   <form action="{{ route('simpan.pengguna') }}" method="POST" enctype="multipart/form-data">
+      @csrf
       <div class="card-body">
          <div class="row">
             <div class="col-md-6">
@@ -28,9 +29,9 @@
                   <label>Role Pengguna</label>
                   <select class="form-control" style="width: 100%;">
                      <option value="">Pilih Role Pengguna</option>
-                     <option>Alaska</option>
-                     <option>California</option>
-                     <option>Delaware</option>
+                     @foreach ($roles as $role)
+                     <option value="{{ $role->id }}">{{ $role->nama }}</option>
+                     @endforeach
                   </select>
                </div>
             </div>
@@ -92,9 +93,9 @@
       // $('.select2').select2()
       
       //Initialize Select2 Elements
-      $('.select2bs4').select2({
-      theme: 'bootstrap4'
-      })
+      // $('.select2bs4').select2({
+      // theme: 'bootstrap4'
+      // })
 
       bsCustomFileInput.init();
    });
