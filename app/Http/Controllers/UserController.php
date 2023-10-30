@@ -11,7 +11,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::all();
+        $users = User::where('role_id', '!=', 1)->get();
         return view('Pages.Pengguna.Index', compact('users'));
     }
 
@@ -37,7 +37,7 @@ class UserController extends Controller
 
     public function tambah()
     {
-        $roles = Role::all();
+        $roles = Role::where('id', '!=', 1)->get();
         return view('Pages.Pengguna.Tambah', compact('roles'));
     }
 
