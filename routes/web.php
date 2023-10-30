@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TowerController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -30,4 +31,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/activated-pengguna/{id}', [UserController::class, 'activated'])->name('activated.pengguna');
     Route::get('/tambah-pengguna', [UserController::class, 'tambah'])->name('tambah.pengguna');
     Route::post('/simpan-pengguna', [UserController::class, 'simpan'])->name('simpan.pengguna');
+
+    Route::get('/tower', [TowerController::class, 'index'])->name('tower.index');
 });

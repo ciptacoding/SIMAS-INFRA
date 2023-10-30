@@ -22,7 +22,11 @@ class LoginController extends Controller
             'password' => ['required'],
         ]);
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt([
+            'email' => $credentials['email'],
+            'password' => $credentials['password'],
+            'status' => true
+        ])) {
             $request->session()->regenerate();
             return redirect()->intended('/');
         }
