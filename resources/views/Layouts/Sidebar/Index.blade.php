@@ -1,8 +1,8 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
    <!-- Brand Logo -->
-   <a href="/" class="brand-link d-flex flex-column align-items-center">
+   <a href="/" class="brand-link d-flex flex-column align-items-center nav nav-pills nav-sidebar">
       <img src="{{ asset('Logo/Logo-TELKOM.png') }}" alt="Logo" class="w-50">
-      <span class="text-sm">Sistem Informasi Manajemen Aset</span>
+      <p class="text-sm nav-header">Sistem Informasi Manajemen Aset</p>
    </a>
 
    <!-- Sidebar -->
@@ -34,7 +34,7 @@
                </a>
             </li>
             <li class="nav-item">
-               <a href="#" class="nav-link">
+               <a href="{{ route('tower.index') }}" class="nav-link">
                   <i class="nav-icon fas fa-broadcast-tower"></i>
                   <p>
                      Data Tower
