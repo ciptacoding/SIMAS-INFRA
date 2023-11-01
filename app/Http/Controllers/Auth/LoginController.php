@@ -10,11 +10,13 @@ use Illuminate\Http\RedirectResponse;
 
 class LoginController extends Controller
 {
+    // method untuk menampilkan form login
     public function login()
     {
         return view('Pages.Auth.Login');
     }
 
+    // method untuk melakukan validasi saat pengguna login
     public function authenticate(Request $request): RedirectResponse
     {
         $credentials = $request->validate([
@@ -36,6 +38,7 @@ class LoginController extends Controller
         ])->onlyInput('email');
     }
 
+    // method untuk menutup sesi / Logout
     public function logout(Request $request)
     {
         Auth::logout();
