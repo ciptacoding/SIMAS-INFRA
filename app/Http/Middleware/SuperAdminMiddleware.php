@@ -13,6 +13,8 @@ class SuperAdminMiddleware
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
+
+    //  method untuk memeriksa hak akses dari seorang Super Admin
     public function handle(Request $request, Closure $next): Response
     {
         if ($request->user() && $request->user()->role_id === 1) {
