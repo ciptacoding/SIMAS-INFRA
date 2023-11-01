@@ -9,12 +9,14 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    // Method untuk menampilkan datatable pengguna
     public function index()
     {
         $users = User::where('role_id', '!=', 1)->get();
         return view('Pages.Pengguna.Index', compact('users'));
     }
 
+    // method untuk menonaktifkan pengguna
     public function disabled(string $id)
     {
         $user = User::findOrFail($id);
@@ -25,6 +27,7 @@ class UserController extends Controller
         return redirect()->route('users.index');
     }
 
+    // method untuk mengaktifkan pengguna
     public function activated(string $id)
     {
         $user = User::findOrFail($id);
@@ -35,12 +38,14 @@ class UserController extends Controller
         return redirect()->route('users.index');
     }
 
+    // method untuk menampilkan form tambah pengguna
     public function tambah()
     {
         $roles = Role::where('id', '!=', 1)->get();
         return view('Pages.Pengguna.Tambah', compact('roles'));
     }
 
+    // method untuk menyimpan pengguna
     public function simpan(Request $request)
     {
         $request->validate([
