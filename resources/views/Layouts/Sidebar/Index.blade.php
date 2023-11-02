@@ -34,7 +34,8 @@
                </a>
             </li>
             <li class="nav-item">
-               <a href="{{ route('tower.index') }}" class="nav-link">
+               <a href="{{ route('tower.index') }}"
+                  class="nav-link {{ Route::currentRouteName() === 'tower.index' ? 'active' : ' '}}">
                   <i class="nav-icon fas fa-broadcast-tower"></i>
                   <p>
                      Data Tower
