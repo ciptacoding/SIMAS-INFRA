@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('towers', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_tower');
+            $table->string('nama_tower')->unique();
             $table->string('lokasi_tower');
             $table->string('status_tower');
+            $table->string('longtitude');
+            $table->string('latitude');
             $table->timestamps();
         });
     }

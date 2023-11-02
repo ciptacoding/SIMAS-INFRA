@@ -1,5 +1,13 @@
 @extends('Layouts.Main')
 
+@push('styles')
+<style>
+   #map {
+      height: 400px;
+   }
+</style>
+@endpush
+
 {{-- Add Button --}}
 @section('add-button')
 <a href="{{ route('tambah.pengguna') }}"><button class="btn btn-primary rounded-lg">Tambah Tower</button></a>
@@ -20,14 +28,15 @@
       <h3 class="card-title">Tabel Data Tower</h3>
    </div>
    <div class="card-body">
-      <table id="datatables" class="table table-bordered table-striped">
+      <div id="map"></div>
+      <table id="datatables" class="table table-bordered table-striped mt-4">
          <thead>
             <tr>
-               <th>Role</th>
-               <th>Username</th>
-               <th>Email</th>
-               <th>Whatsapp</th>
-               <th>Status</th>
+               <th>Nama Tower</th>
+               <th>Lokasi Tower</th>
+               <th>Status Tower</th>
+               <th>Latitude</th>
+               <th>Longtitude</th>
                <th>Aksi</th>
             </tr>
          </thead>
@@ -72,20 +81,35 @@
 @endsection
 {{-- Main Page --}}
 
-{{-- Script Datatables --}}
-{{-- @push('scripts')
+@push('scripts')
 <script>
-   $(function () {
-   $('#datatables').DataTable({
-      "paging": true,
-      "lengthChange": true,
-      "searching": true,
-      "ordering": true,
-      "info": true,
-      "autoWidth": true,
-      "responsive": true,
-      });
-   });
+   // $(function () {
+   // $('#datatables').DataTable({
+   //    "paging": true,
+   //    "lengthChange": true,
+   //    "searching": true,
+   //    "ordering": true,
+   //    "info": true,
+   //    "autoWidth": true,
+   //    "responsive": true,
+   //    });
+   // });
+
+   var map = L.map('map').setView([-8.381392, 115.189139], 9);
+   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+   }).addTo(map);
+
+   var popup = L.popup();
+   
+   function onMapClick(e) {
+      popup
+      .setLatLng(e.latlng)
+      .setContent("You clicked the map at " + e.latlng.toString())
+      .openOn(map);
+   }
+   
+   map.on('click', onMapClick);
 </script>
-@endpush --}}
-{{-- Script Datatables --}}
+@endpush
