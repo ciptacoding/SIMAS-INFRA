@@ -10,7 +10,7 @@
 
 {{-- Add Button --}}
 @section('add-button')
-<a href="{{ route('tambah.pengguna') }}"><button class="btn btn-primary rounded-lg">Tambah Tower</button></a>
+<h4>Data Tower</h4>
 @endsection
 {{-- Add Button --}}
 
@@ -25,7 +25,7 @@
 @section('main-page')
 <div class="card">
    <div class="card-header">
-      <h3 class="card-title">Tabel Data Tower</h3>
+      <h3 class="card-title">Peta Dan Tabel Tower</h3>
    </div>
    <div class="card-body">
       <div id="map"></div>
@@ -106,7 +106,9 @@
    function onMapClick(e) {
       popup
       .setLatLng(e.latlng)
-      .setContent("You clicked the map at " + e.latlng.toString())
+      .setContent("<p class='mb-1'>Apakah anda ingin menambah tower pada lokasi ini?</p>" 
+      + e.latlng.toString() + 
+      `<br> <button class='mt-1 btn btn-sm btn-primary'><a href='/tambah-tower/${e.latlng.lat}/${e.latlng.lng}' class='text-white'>Tambah Tower</a></button>`)
       .openOn(map);
    }
    
