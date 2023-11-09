@@ -33,4 +33,5 @@ Route::middleware('auth')->group(function () {
     Route::post('/simpan-pengguna', [UserController::class, 'simpan'])->name('simpan.pengguna');
 
     Route::get('/tower', [TowerController::class, 'index'])->name('tower.index');
+    Route::get('/tambah-tower/{latitude}/{longtitude}', [TowerController::class, 'create'])->name('tower.create');
 });
