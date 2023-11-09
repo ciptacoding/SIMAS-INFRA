@@ -10,4 +10,13 @@ class TowerController extends Controller
     {
         return view('Pages.Tower.Index');
     }
+
+    public function create($latitude, $longtitude)
+    {
+        $dataLocation = [
+            "latitude" => $latitude,
+            "longtitude" => $longtitude,
+        ];
+        return view('Pages.Tower.Create', compact('dataLocation'));
+    }
 }
