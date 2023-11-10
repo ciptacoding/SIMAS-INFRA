@@ -52,7 +52,8 @@
                      {{ $tower->status_tower}}
                   </span>
                </td>
-               <td><a href="#" class="btn btn-sm btn-warning"><i class="fas fa-tools"></i> Edit</a>
+               <td><a href="{{ route('tower.edit', $tower->id) }}" class="btn btn-sm btn-warning"><i
+                        class="fas fa-tools"></i> Edit</a>
                </td>
             </tr>
             @endforeach
@@ -104,7 +105,7 @@
    function onMapClick(e) {
       popup
       .setLatLng(e.latlng)
-      .setContent("<p class='mb-1'>Apakah anda ingin menambah tower pada lokasi ini?</p>" 
+      .setContent("<p class='mb-1'>Tambah tower pada lokasi ini?</p>" 
       + e.latlng.toString() + 
       `<br> <button class='mt-1 btn btn-sm btn-primary'><a href='/tambah-tower/${e.latlng.lat}/${e.latlng.lng}' class='text-white'>Tambah Tower</a></button>`)
       .openOn(map);
