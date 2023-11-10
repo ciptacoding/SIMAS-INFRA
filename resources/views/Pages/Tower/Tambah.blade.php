@@ -28,8 +28,8 @@
                <div class="form-group">
                   <label for="nama_tower">Nama Tower</label>
                   <input type="text" class="form-control @error('nama_tower') is-invalid @enderror" id="nama_tower"
-                     name="nama_tower" placeholder="Masukkan nama tower">
-                  @error('role_id')
+                     name="nama_tower" placeholder="Masukkan nama tower" value="{{ old('nama_tower') }}">
+                  @error('nama_tower')
                   <div class="invalid-feedback">{{ $message }}</div>
                   @enderror
                </div>
@@ -39,8 +39,9 @@
                <div class="form-group">
                   <label for="lokasi_tower">Lokasi Tower</label>
                   <input type="text" class="form-control @error('lokasi_tower') is-invalid @enderror" id="lokasi_tower"
-                     name="lokasi_tower" placeholder="Masukkan lokasi tower (nama daerah)">
-                  @error('role_id')
+                     name="lokasi_tower" placeholder="Masukkan lokasi tower (nama daerah)"
+                     value="{{ old('lokasi_tower') }}">
+                  @error('lokasi_tower')
                   <div class="invalid-feedback">{{ $message }}</div>
                   @enderror
                </div>
@@ -79,8 +80,8 @@
                   <select name="status_tower" class="form-control @error('status_tower') is-invalid @enderror"
                      style="width: 100%;">
                      <option value="aktif">Aktif</option>
-                     <option value="aktif">Maintenance</option>
-                     <option value="aktif">Nonaktif</option>
+                     <option value="maintenance">Maintenance</option>
+                     <option value="nonaktif">Nonaktif</option>
                   </select>
                   @error('status_tower')
                   <div class="invalid-feedback">{{ $message }}</div>
