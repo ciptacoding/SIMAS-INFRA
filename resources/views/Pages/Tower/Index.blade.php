@@ -28,52 +28,34 @@
       <h3 class="card-title">Peta Dan Tabel Tower</h3>
    </div>
    <div class="card-body">
-      <div id="map"></div>
+      <div id="map" class="mb-4"></div>
       <table id="datatables" class="table table-bordered table-striped mt-4">
          <thead>
             <tr>
                <th>Nama Tower</th>
                <th>Lokasi Tower</th>
-               <th>Status Tower</th>
                <th>Latitude</th>
                <th>Longtitude</th>
+               <th>Status Tower</th>
                <th>Aksi</th>
             </tr>
          </thead>
          <tbody>
-            {{-- @foreach ($users as $user )
+            @foreach ($towers as $tower )
             <tr>
-               <td>{{ $user->role->nama }}</td>
-               <td>{{ $user->username }}</td>
-               <td>{{ $user->email }}</td>
-               <td>{{ $user->whatsapp }}</td>
+               <td>{{ $tower->nama_tower }}</td>
+               <td>{{ $tower->lokasi_tower }}</td>
+               <td>{{ $tower->latitude }}</td>
+               <td>{{ $tower->longtitude }}</td>
                <td>
-                  <span class="{{ $user->status === 1 ? 'badge badge-success' : 'badge badge-danger' }}">
-                     {{ $user->status === 1 ? 'Aktif' : 'Non-Active' }}
+                  <span class="{{ $tower->status_tower === 'aktif' ? 'badge badge-success' : 'badge badge-danger' }}">
+                     {{ $tower->status_tower}}
                   </span>
                </td>
-               <td>
-                  @if ($user->status === 1)
-                  <form action="{{ route('disabled.pengguna', $user->id) }}" method="POST">
-                     @method('PATCH')
-                     @csrf
-                     <button type="submit" class="btn-danger rounded-lg" title="Disabled user">
-                        <i class="fas fa-times fa-lg" style="color: #ffffff;"></i>
-                     </button>
-                  </form>
-                  @else
-                  <form action="{{ route('activated.pengguna', $user->id) }}" method="POST">
-                     @method('PATCH')
-                     @csrf
-                     <button type="submit" class="btn-success rounded-lg" title="Activated user">
-                        <i class="fas fa-check fa-sm" style="color: #ffffff;"></i>
-                     </button>
-                  </form>
-                  @endif
+               <td><a href="#" class="btn btn-sm btn-warning"><i class="fas fa-tools"></i> Edit</a>
                </td>
-
             </tr>
-            @endforeach --}}
+            @endforeach
          </tbody>
       </table>
    </div>
@@ -83,23 +65,39 @@
 
 @push('scripts')
 <script>
-   // $(function () {
-   // $('#datatables').DataTable({
-   //    "paging": true,
-   //    "lengthChange": true,
-   //    "searching": true,
-   //    "ordering": true,
-   //    "info": true,
-   //    "autoWidth": true,
-   //    "responsive": true,
-   //    });
-   // });
+   $(function () {
+      $('#datatables').DataTable({
+         "paging": true,
+         "lengthChange": true,
+         "searching": true,
+         "ordering": true,
+         "info": true,
+         "autoWidth": true,
+         "responsive": true,
+      });
+   });
 
    var map = L.map('map').setView([-8.381392, 115.189139], 9);
    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+   maxZoom: 19,
+   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
    }).addTo(map);
+
+   function getMarkers() {
+      $.ajax({
+         url: '/markers',
+         type: 'GET',
+         dataType: 'json',
+         success: function(data){
+            for(const item of data){
+               var marker = L.marker([item.latitude, item.longtitude]).addTo(map);
+               marker.bindPopup(`<b>${item.nama_tower}</b><br>${item.lokasi_tower}.`).openPopup();
+            }
+         }
+      });
+   }
+
+   getMarkers();
 
    var popup = L.popup();
    
