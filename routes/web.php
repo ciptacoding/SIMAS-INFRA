@@ -27,13 +27,15 @@ Route::middleware('auth')->group(function () {
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
     Route::get('/pengguna', [UserController::class, 'index'])->name('users.index');
+    Route::get('/tambah-pengguna', [UserController::class, 'tambah'])->name('tambah.pengguna');
     Route::patch('/disabled-pengguna/{id}', [UserController::class, 'disabled'])->name('disabled.pengguna');
     Route::patch('/activated-pengguna/{id}', [UserController::class, 'activated'])->name('activated.pengguna');
-    Route::get('/tambah-pengguna', [UserController::class, 'tambah'])->name('tambah.pengguna');
     Route::post('/simpan-pengguna', [UserController::class, 'simpan'])->name('simpan.pengguna');
 
     Route::get('/tower', [TowerController::class, 'index'])->name('tower.index');
     Route::get('/markers', [TowerController::class, 'markers'])->name('tower.markers');
     Route::get('/tambah-tower/{latitude}/{longtitude}', [TowerController::class, 'tambah'])->name('tower.tambah');
+    Route::get('/edit-tower/{id}', [TowerController::class, 'edit'])->name('tower.edit');
     Route::post('/simpan-tower', [TowerController::class, 'simpan'])->name('tower.simpan');
+    Route::put('/update-tower/{id}', [TowerController::class, 'update'])->name('tower.update');
 });
