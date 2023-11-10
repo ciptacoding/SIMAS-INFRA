@@ -48,4 +48,34 @@ class TowerController extends Controller
 
         return redirect()->route('tower.index');
     }
+
+    public function edit($id)
+    {
+        $tower = Tower::findOrFail($id);
+
+        return view('Pages.Tower.Edit', compact('tower'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'nama_tower' => ['required', 'max:255'],
+            'lokasi_tower' => ['required', 'max:255'],
+            'latitude' => ['required'],
+            'longtitude' => ['required'],
+            'status_tower' => ['required', 'max:255']
+        ]);
+
+        $tower = Tower::findOrFail($id);
+
+        $tower->update([
+            'nama_tower' => $request->nama_tower,
+            'lokasi_tower' => $request->lokasi_tower,
+            'latitude' => $request->latitude,
+            'longtitude' => $request->longtitude,
+            'status_tower' => $request->status_tower,
+        ]);
+
+        return redirect()->route('tower.index');
+    }
 }
