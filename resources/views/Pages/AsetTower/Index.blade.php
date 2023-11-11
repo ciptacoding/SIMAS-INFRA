@@ -1,0 +1,62 @@
+@extends('Layouts.Main')
+
+{{-- Add Button --}}
+@section('add-button')
+<h4>Data Tower</h4>
+@endsection
+{{-- Add Button --}}
+
+{{-- Breadcrumb --}}
+@section('breadcrumb')
+<li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+<li class="breadcrumb-item active" aria-current="page">Data-Tower</li>
+@endsection
+{{-- Breadcrumb --}}
+
+{{-- Main Page --}}
+@section('main-page')
+<div class="card">
+   <div class="card-header">
+      <h3 class="card-title">Peta Dan Tabel Tower</h3>
+   </div>
+   <div class="card-body">
+      <div id="map" class="mb-4"></div>
+      <table id="datatables" class="table table-bordered table-striped mt-4">
+         <thead>
+            <tr>
+               <th>Nama Tower</th>
+               <th>Lokasi Tower</th>
+               <th>Sparepart</th>
+               <th>Keterangan</th>
+               <th>Status Tower</th>
+               <th>Aksi</th>
+            </tr>
+         </thead>
+         <tbody>
+            {{-- @foreach ($towers as $tower )
+            <tr>
+               <td>{{ $tower->nama_tower }}</td>
+               <td>{{ $tower->lokasi_tower }}</td>
+               <td>{{ $tower->latitude }}</td>
+               <td>{{ $tower->longtitude }}</td>
+               <td>
+                  <span class="{{ $tower->status_tower === 'aktif' ? 'badge badge-success' : 'badge badge-danger' }}">
+                     {{ $tower->status_tower}}
+                  </span>
+               </td>
+               <td><a href="{{ route('tower.edit', $tower->id) }}" class="btn btn-sm btn-warning"><i
+                        class="fas fa-tools"></i> Edit</a>
+               </td>
+            </tr>
+            @endforeach --}}
+         </tbody>
+      </table>
+   </div>
+</div>
+@endsection
+{{-- Main Page --}}
+
+@push('scripts')
+<script>
+</script>
+@endpush
