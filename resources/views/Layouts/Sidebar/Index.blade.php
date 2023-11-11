@@ -43,7 +43,8 @@
                </a>
             </li>
             <li class="nav-item">
-               <a href="#" class="nav-link">
+               <a href="{{ route('aset.index') }}"
+                  class="nav-link {{ Route::currentRouteName() === 'aset.index' ? 'active' : ' ' }}">
                   <i class="nav-icon fas fa-satellite-dish"></i>
                   <p>
                      Aset Tower
