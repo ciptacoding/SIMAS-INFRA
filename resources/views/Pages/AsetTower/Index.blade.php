@@ -2,14 +2,14 @@
 
 {{-- Add Button --}}
 @section('add-button')
-<h4>Data Tower</h4>
+<a href="{{ route('aset.tambah') }}"><button class="btn btn-primary rounded-lg">Tambah Aset </button></a>
 @endsection
 {{-- Add Button --}}
 
 {{-- Breadcrumb --}}
 @section('breadcrumb')
 <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
-<li class="breadcrumb-item active" aria-current="page">Data-Tower</li>
+<li class="breadcrumb-item active" aria-current="page">Aset-Tower</li>
 @endsection
 {{-- Breadcrumb --}}
 
@@ -17,11 +17,10 @@
 @section('main-page')
 <div class="card">
    <div class="card-header">
-      <h3 class="card-title">Peta Dan Tabel Tower</h3>
+      <h3 class="card-title">Data Tabel Aset Tower</h3>
    </div>
    <div class="card-body">
-      <div id="map" class="mb-4"></div>
-      <table id="datatables" class="table table-bordered table-striped mt-4">
+      <table id="datatables" class="table table-bordered table-striped">
          <thead>
             <tr>
                <th>Nama Tower</th>
@@ -33,22 +32,31 @@
             </tr>
          </thead>
          <tbody>
-            {{-- @foreach ($towers as $tower )
+            @foreach ($assetsTower as $asetTower )
             <tr>
-               <td>{{ $tower->nama_tower }}</td>
-               <td>{{ $tower->lokasi_tower }}</td>
-               <td>{{ $tower->latitude }}</td>
-               <td>{{ $tower->longtitude }}</td>
+               <td>{{ $asetTower->tower->nama_tower }}</td>
+               <td>{{ $asetTower->tower->lokasi_tower }}</td>
+               <td>{{ $asetTower->nama_sparepart }}</td>
+               <td>{{ $asetTower->keterangan }}</td>
                <td>
-                  <span class="{{ $tower->status_tower === 'aktif' ? 'badge badge-success' : 'badge badge-danger' }}">
-                     {{ $tower->status_tower}}
+                  <span
+                     class="{{ $asetTower->tower->status_tower === 'aktif' ? 'badge badge-success' : 'badge badge-danger' }}">
+                     {{ $asetTower->tower->status_tower}}
                   </span>
                </td>
-               <td><a href="{{ route('tower.edit', $tower->id) }}" class="btn btn-sm btn-warning"><i
-                        class="fas fa-tools"></i> Edit</a>
+               <td>
+                  <a href="{{ route('aset.edit', $asetTower->id) }}" class="btn btn-sm btn-warning">
+                     <i class="fas fa-tools" style="color: #ffffff"></i>
+                  </a>
+                  <a href="{{ route('aset.edit', $asetTower->id) }}" class="btn btn-sm btn-info">
+                     <i class="fas fa-info-circle"></i>
+                  </a>
+                  <a href="{{ route('aset.edit', $asetTower->id) }}" class="btn btn-sm btn-danger">
+                     <i class="fas fa-trash-alt"></i>
+                  </a>
                </td>
             </tr>
-            @endforeach --}}
+            @endforeach
          </tbody>
       </table>
    </div>
@@ -58,5 +66,16 @@
 
 @push('scripts')
 <script>
+   $(function () {
+      $('#datatables').DataTable({
+         "paging": true,
+         "lengthChange": true,
+         "searching": true,
+         "ordering": true,
+         "info": true,
+         "autoWidth": true,
+         "responsive": true,
+      });
+   });
 </script>
 @endpush
