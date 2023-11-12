@@ -76,14 +76,14 @@
 @push('scripts')
 <script>
    $(function () {
-   $('#datatables').DataTable({
-      "paging": true,
-      "lengthChange": true,
-      "searching": true,
-      "ordering": true,
-      "info": true,
-      "autoWidth": true,
-      "responsive": true,
+      $('#datatables').DataTable({
+         "paging": true,
+         "lengthChange": true,
+         "searching": true,
+         "ordering": true,
+         "info": true,
+         "autoWidth": true,
+         "responsive": true,
       });
    });
 </script>
