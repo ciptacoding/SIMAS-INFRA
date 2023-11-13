@@ -41,15 +41,38 @@ class AsetTowerController extends Controller
         return redirect()->route('aset.index');
     }
 
-    public function edit()
+    public function edit($id)
     {
+        $towers = Tower::whereNotIn('id', function ($query) {
+            $query->select('tower_id')->from((new AsetTower)->getTable());
+        })->get();
+        $asetTower = AsetTower::findOrFail($id);
+        return view('Pages.AsetTower.Edit', compact('asetTower', 'towers'));
     }
 
-    public function update()
+    public function update(Request $request, $id)
     {
+        $request->validate([
+            'tower_id' => ['required'],
+            'nama_sparepart' => ['required', 'max:255'],
+            'keterangan' => ['required', 'max:255']
+        ]);
+
+        $asetTower = AsetTower::findOrFail($id);
+
+        $asetTower->update([
+            'tower_id' => $request->tower_id,
+            'nama_sparepart' => $request->nama_sparepart,
+            'keterangan' => $request->keterangan
+        ]);
+
+        return redirect()->route('aset.index');
     }
 
-    public function delete()
+    public function delete($id)
     {
+        $asetTower = AsetTower::findOrFail($id);
+        $asetTower->delete();
+        return redirect()->route('aset.index');
     }
 }
