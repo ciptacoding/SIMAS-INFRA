@@ -48,12 +48,14 @@
                   <a href="{{ route('aset.edit', $asetTower->id) }}" class="btn btn-sm btn-warning">
                      <i class="fas fa-tools" style="color: #ffffff"></i>
                   </a>
-                  <a href="{{ route('aset.edit', $asetTower->id) }}" class="btn btn-sm btn-info">
+                  <a href="{{ route('aset.detail', $asetTower->id) }}" class="btn btn-sm btn-info">
                      <i class="fas fa-info-circle"></i>
                   </a>
-                  <a href="{{ route('aset.edit', $asetTower->id) }}" class="btn btn-sm btn-danger">
-                     <i class="fas fa-trash-alt"></i>
-                  </a>
+                  <form action="{{ route('aset.delete', $asetTower->id) }}" method="POST" class="d-inline">
+                     @method('DELETE')
+                     @csrf
+                     <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
+                  </form>
                </td>
             </tr>
             @endforeach
