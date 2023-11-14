@@ -4,6 +4,7 @@ use App\Http\Controllers\AsetTowerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MaintenanceController;
 use App\Http\Controllers\TowerController;
 use App\Http\Controllers\UserController;
 
@@ -47,4 +48,12 @@ Route::middleware('auth')->group(function () {
     Route::post('/simpan-aset', [AsetTowerController::class, 'simpan'])->name('aset.simpan');
     Route::put('/update-aset/{id}', [AsetTowerController::class, 'update'])->name('aset.update');
     Route::delete('/delete-aset/{id}', [AsetTowerController::class, 'delete'])->name('aset.delete');
+
+    Route::get('/maintenances', [MaintenanceController::class, 'index'])->name('maintenance.index');
+    Route::get('/maintenances/{id}', [MaintenanceController::class, 'detail'])->name('maintenance.detail');
+    Route::get('tambah-maintenance', [MaintenanceController::class, 'tambah'])->name('maintenance.tambah');
+    Route::get('edit-maintenance/{id}', [MaintenanceController::class, 'edit'])->name('maintenance.edit');
+    Route::post('maintenances', [MaintenanceController::class, 'simpan'])->name('maintenance.simpan');
+    Route::put('maintenances/{id}', [MaintenanceController::class, 'update'])->name('maintenance.update');
+    Route::delete('maintenance/{id}', [MaintenanceController::class, 'delete'])->name('maintenance.delete');
 });
