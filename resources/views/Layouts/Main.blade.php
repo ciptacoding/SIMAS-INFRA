@@ -101,6 +101,10 @@
    <script src="{{ asset('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 
+   {{-- Sweet alert 2 --}}
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   {{-- Sweet alert 2 --}}
+
    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
