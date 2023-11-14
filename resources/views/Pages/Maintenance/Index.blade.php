@@ -2,14 +2,14 @@
 
 {{-- Add Button --}}
 @section('add-button')
-<a href="{{ route('aset.tambah') }}"><button class="btn btn-primary rounded-lg">Tambah Aset </button></a>
+<a href="{{ route('maintenance.tambah') }}"><button class="btn btn-primary rounded-lg">Tambah Maintenance</button></a>
 @endsection
 {{-- Add Button --}}
 
 {{-- Breadcrumb --}}
 @section('breadcrumb')
 <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
-<li class="breadcrumb-item active" aria-current="page">Aset-Tower</li>
+<li class="breadcrumb-item active" aria-current="page">Maintenance</li>
 @endsection
 {{-- Breadcrumb --}}
 
@@ -17,22 +17,22 @@
 @section('main-page')
 <div class="card">
    <div class="card-header">
-      <h3 class="card-title">Data Tabel Aset Tower</h3>
+      <h3 class="card-title">Data Tabel Maintenance</h3>
    </div>
    <div class="card-body">
       <table id="datatables" class="table table-bordered table-striped">
          <thead>
             <tr>
+               <th>Tim Pelaksana</th>
                <th>Nama Tower</th>
-               <th>Lokasi Tower</th>
-               <th>Sparepart</th>
+               <th>Tanggal</th>
+               <th>Perbaikan</th>
                <th>Keterangan</th>
-               <th>Status Tower</th>
                <th>Aksi</th>
             </tr>
          </thead>
          <tbody>
-            @foreach ($assetsTower as $asetTower )
+            {{-- @foreach ($assetsTower as $asetTower )
             <tr>
                <td>{{ $asetTower->tower->nama_tower }}</td>
                <td>{{ $asetTower->tower->lokasi_tower }}</td>
@@ -59,7 +59,7 @@
                   </form>
                </td>
             </tr>
-            @endforeach
+            @endforeach --}}
          </tbody>
       </table>
    </div>
@@ -69,35 +69,35 @@
 
 @push('scripts')
 <script>
-   $(function () {
-      $('#datatables').DataTable({
-         "paging": true,
-         "lengthChange": true,
-         "searching": true,
-         "ordering": true,
-         "info": true,
-         "autoWidth": true,
-         "responsive": true,
-      });
-   });
+   // $(function () {
+   //    $('#datatables').DataTable({
+   //       "paging": true,
+   //       "lengthChange": true,
+   //       "searching": true,
+   //       "ordering": true,
+   //       "info": true,
+   //       "autoWidth": true,
+   //       "responsive": true,
+   //    });
+   // });
 
-   $('.btn-submit').click(function (e) {
-      e.preventDefault();
-      const deleteForm = $(this).closest('form');
+   // $('.btn-submit').click(function (e) {
+   //    e.preventDefault();
+   //    const deleteForm = $(this).closest('form');
 
-      Swal.fire({
-         title: "Are you sure?",
-         text: "You won't be able to revert this!",
-         icon: "warning",
-         showCancelButton: true,
-         confirmButtonColor: "#3085d6",
-         cancelButtonColor: "#d33",
-         confirmButtonText: "Yes, delete it!"
-      }).then((result) => {
-         if (result.isConfirmed) {
-            deleteForm.submit();
-         }
-      });
-   });
+   //    Swal.fire({
+   //       title: "Are you sure?",
+   //       text: "You won't be able to revert this!",
+   //       icon: "warning",
+   //       showCancelButton: true,
+   //       confirmButtonColor: "#3085d6",
+   //       cancelButtonColor: "#d33",
+   //       confirmButtonText: "Yes, delete it!"
+   //    }).then((result) => {
+   //       if (result.isConfirmed) {
+   //          deleteForm.submit();
+   //       }
+   //    });
+   // });
 </script>
 @endpush
