@@ -54,7 +54,8 @@
                   <form action="{{ route('aset.delete', $asetTower->id) }}" method="POST" class="d-inline">
                      @method('DELETE')
                      @csrf
-                     <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
+                     <button type="submit" class="btn btn-sm btn-danger btn-submit"><i
+                           class="fas fa-trash-alt"></i></button>
                   </form>
                </td>
             </tr>
@@ -77,6 +78,25 @@
          "info": true,
          "autoWidth": true,
          "responsive": true,
+      });
+   });
+
+   $('.btn-submit').click(function (e) {
+      e.preventDefault();
+      const deleteForm = $(this).closest('form');
+
+      Swal.fire({
+         title: "Are you sure?",
+         text: "You won't be able to revert this!",
+         icon: "warning",
+         showCancelButton: true,
+         confirmButtonColor: "#3085d6",
+         cancelButtonColor: "#d33",
+         confirmButtonText: "Yes, delete it!"
+      }).then((result) => {
+         if (result.isConfirmed) {
+            deleteForm.submit();
+         }
       });
    });
 </script>
