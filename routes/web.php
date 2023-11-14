@@ -46,5 +46,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit-aset/{id}', [AsetTowerController::class, 'edit'])->name('aset.edit');
     Route::post('/simpan-aset', [AsetTowerController::class, 'simpan'])->name('aset.simpan');
     Route::put('/update-aset/{id}', [AsetTowerController::class, 'update'])->name('aset.update');
-    Route::delete('/delete-aset/{id}', [AsetTowerController::class, 'update'])->name('aset.delete');
+    Route::delete('/delete-aset/{id}', [AsetTowerController::class, 'delete'])->name('aset.delete');
 });
