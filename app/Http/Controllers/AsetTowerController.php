@@ -14,8 +14,18 @@ class AsetTowerController extends Controller
         return view('Pages.AsetTower.Index', compact('assetsTower'));
     }
 
-    public function detail()
+    public function detail($id, Request $request)
     {
+
+        $asetTower = AsetTower::findOrFail($id);
+
+        $jsonResponse = $asetTower->tower;
+
+        if ($request->ajax()) {
+            return response()->json($jsonResponse);
+        }
+
+        return view('Pages.AsetTower.Detail', compact('asetTower'));
     }
 
     public function tambah()
