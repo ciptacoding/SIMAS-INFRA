@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MaintenanceController;
+use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TowerController;
 use App\Http\Controllers\UserController;
 
@@ -51,9 +52,17 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/maintenances', [MaintenanceController::class, 'index'])->name('maintenance.index');
     Route::get('/maintenances/{id}', [MaintenanceController::class, 'detail'])->name('maintenance.detail');
-    Route::get('tambah-maintenance', [MaintenanceController::class, 'tambah'])->name('maintenance.tambah');
-    Route::get('edit-maintenance/{id}', [MaintenanceController::class, 'edit'])->name('maintenance.edit');
-    Route::post('maintenances', [MaintenanceController::class, 'simpan'])->name('maintenance.simpan');
-    Route::put('maintenances/{id}', [MaintenanceController::class, 'update'])->name('maintenance.update');
-    Route::delete('maintenance/{id}', [MaintenanceController::class, 'delete'])->name('maintenance.delete');
+    Route::get('/tambah-maintenance', [MaintenanceController::class, 'tambah'])->name('maintenance.tambah');
+    Route::get('/edit-maintenance/{id}', [MaintenanceController::class, 'edit'])->name('maintenance.edit');
+    Route::post('/maintenances', [MaintenanceController::class, 'simpan'])->name('maintenance.simpan');
+    Route::put('/maintenances/{id}', [MaintenanceController::class, 'update'])->name('maintenance.update');
+    Route::delete('/maintenance/{id}', [MaintenanceController::class, 'delete'])->name('maintenance.delete');
+
+    Route::get('/teams', [TeamController::class, 'index'])->name('teams.index');
+    Route::get('/teams/{id}', [TeamController::class, 'detail'])->name('teams.detail');
+    Route::get('/teams/create', [TeamController::class, 'tambah'])->name('teams.tambah');
+    Route::get('/teams/edit/{id}', [TeamController::class, 'edit'])->name('teams.edit');
+    Route::post('/teams', [TeamController::class, 'simpan'])->name('teams.simpan');
+    Route::put('/teams/{id}', [TeamController::class, 'update'])->name('teams.update');
+    Route::delete('/teams/{id}', [TeamController::class, 'delete'])->name('teams.delete');
 });
