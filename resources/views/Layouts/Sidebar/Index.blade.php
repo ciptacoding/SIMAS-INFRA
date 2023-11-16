@@ -51,6 +51,15 @@
                   </p>
                </a>
             </li>
+            <li class="nav-item">
+               <a href="{{ route('teams.index') }}"
+                  class="nav-link {{ Route::currentRouteName() === 'teams.index' ? 'active' : ' ' }}">
+                  <i class="nav-icon fas fa-users-cog"></i>
+                  <p>
+                     Data Team
+                  </p>
+               </a>
+            </li>
             <li class="nav-header">Eksternal</li>
             <li class="nav-item">
                <a href="{{ route('maintenance.index') }}"
@@ -67,14 +76,6 @@
                   <p>
                      Kelola Notifikasi
                      <span class="badge badge-info right">2</span>
-                  </p>
-               </a>
-            </li>
-            <li class="nav-item">
-               <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-users-cog"></i>
-                  <p>
-                     Data Team
                   </p>
                </a>
             </li>
