@@ -19,6 +19,7 @@ class TeamController extends Controller
 
     public function tambah()
     {
+        return view('Pages.Team.Tambah');
     }
 
     public function simpan(Request $request)
