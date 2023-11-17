@@ -15,7 +15,7 @@ class Team extends Model
     // Reverse relationship between table teams and users
     public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'ketua_tim');
     }
 
     // Relationship 1 to many between table teams and maintenances
