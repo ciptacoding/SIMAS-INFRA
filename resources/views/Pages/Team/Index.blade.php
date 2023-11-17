@@ -41,9 +41,9 @@
                   <a href="{{ route('teams.edit', $team->id) }}" class="btn btn-sm btn-warning">
                      <i class="fas fa-tools" style="color: #ffffff"></i>
                   </a>
-                  <a href="{{ route('teams.detail', $team->id) }}" class="btn btn-sm btn-info">
+                  {{-- <a href="{{ route('teams.detail', $team->id) }}" class="btn btn-sm btn-info">
                      <i class="fas fa-info-circle"></i>
-                  </a>
+                  </a> --}}
                   <form action="{{ route('teams.delete', $team->id) }}" method="POST" class="d-inline">
                      @method('DELETE')
                      @csrf
