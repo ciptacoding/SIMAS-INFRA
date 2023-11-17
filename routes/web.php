@@ -52,7 +52,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/maintenances', [MaintenanceController::class, 'index'])->name('maintenance.index');
     Route::get('/maintenances/{id}', [MaintenanceController::class, 'detail'])->name('maintenance.detail');
-    Route::get('/tambah-maintenance', [MaintenanceController::class, 'tambah'])->name('maintenance.tambah');
+    Route::get('/request-maintenance', [MaintenanceController::class, 'tambah'])->name('maintenance.tambah');
     Route::get('/edit-maintenance/{id}', [MaintenanceController::class, 'edit'])->name('maintenance.edit');
     Route::post('/maintenances', [MaintenanceController::class, 'simpan'])->name('maintenance.simpan');
     Route::put('/maintenances/{id}', [MaintenanceController::class, 'update'])->name('maintenance.update');
