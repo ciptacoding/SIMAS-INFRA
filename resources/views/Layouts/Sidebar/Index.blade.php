@@ -87,7 +87,7 @@
                      <i class="fas fa-angle-left right"></i>
                   </p>
                </a>
-               <ul class="nav nav-treeview">
+               <ul class="nav nav-treeview pb-5 mb-5">
                   <li class="nav-item">
                      <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-wrench"></i>
