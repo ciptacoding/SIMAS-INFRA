@@ -2,7 +2,7 @@
 
 {{-- Add Button --}}
 @section('add-button')
-<a href="{{ route('maintenance.tambah') }}"><button class="btn btn-primary rounded-lg">Tambah Maintenance</button></a>
+<a href="{{ route('maintenance.tambah') }}"><button class="btn btn-primary rounded-lg">Request Maintenance</button></a>
 @endsection
 {{-- Add Button --}}
 
