@@ -8,7 +8,7 @@
 
 {{-- Breadcrumb --}}
 @section('breadcrumb')
-<li class="breadcrumb-item"><a href="/aset-tower">Data-Team</a></li>
+<li class="breadcrumb-item"><a href="{{ route('teams.index') }}">Data-Team</a></li>
 <li class="breadcrumb-item active" aria-current="page">Tambah-Data-Team</li>
 @endsection
 {{-- Breadcrumb --}}
