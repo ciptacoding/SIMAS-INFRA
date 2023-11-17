@@ -60,7 +60,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/teams', [TeamController::class, 'index'])->name('teams.index');
     Route::get('/teams/{id}', [TeamController::class, 'detail'])->name('teams.detail');
-    Route::get('/teams/create', [TeamController::class, 'tambah'])->name('teams.tambah');
+    Route::get('/teams-tambah', [TeamController::class, 'tambah'])->name('teams.tambah');
     Route::get('/teams/edit/{id}', [TeamController::class, 'edit'])->name('teams.edit');
     Route::post('/teams', [TeamController::class, 'simpan'])->name('teams.simpan');
     Route::put('/teams/{id}', [TeamController::class, 'update'])->name('teams.update');
