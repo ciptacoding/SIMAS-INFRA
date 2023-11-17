@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Team;
+use App\Models\User;
 
 class TeamController extends Controller
 {
@@ -19,11 +20,30 @@ class TeamController extends Controller
 
     public function tambah()
     {
-        return view('Pages.Team.Tambah');
+        $ketuaTim = User::where('role_id', 3)->whereNotIn('id', function ($query) {
+            $query->select('ketua_tim')->from((new Team)->getTable());
+        })->get();
+
+        return view('Pages.Team.Tambah', compact('ketuaTim'));
     }
 
     public function simpan(Request $request)
     {
+        $request->validate([
+            'ketua_tim' => ['required'],
+            'nama_team' => ['required', 'max:255'],
+            'tugas' => ['required', 'max:255'],
+            'jumlah_anggota' => ['required', 'max:255'],
+        ]);
+
+        Team::create([
+            'ketua_tim' => $request->ketua_tim,
+            'nama_team' => $request->nama_team,
+            'tugas' => $request->tugas,
+            'jumlah_anggota' => $request->jumlah_anggota,
+        ]);
+
+        return redirect()->route('teams.index');
     }
 
     public function edit(Request $request, $id)
