@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Maintenance;
+use App\Models\Team;
+use App\Models\Tower;
 
 class MaintenanceController extends Controller
 {
@@ -22,6 +24,9 @@ class MaintenanceController extends Controller
     // method untuk menampilkan form tambah maintenance
     public function tambah()
     {
+        $teams = Team::all();
+        $towers = Tower::all();
+        return view('Pages.Maintenance.Tambah', compact('teams', 'towers'));
     }
 
     // method untuk menyimpan hasil dari tambah maintenance
