@@ -18,6 +18,7 @@ return new class extends Migration
             $table->date('tanggal');
             $table->text('rincian_perbaikan');
             $table->text('keterangan');
+            $table->string('status');
             $table->timestamps();
         });
     }

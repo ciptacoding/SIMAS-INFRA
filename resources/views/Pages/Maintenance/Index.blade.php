@@ -28,38 +28,35 @@
                <th>Tanggal</th>
                <th>Perbaikan</th>
                <th>Keterangan</th>
+               <th>Status</th>
                <th>Aksi</th>
             </tr>
          </thead>
          <tbody>
-            {{-- @foreach ($assetsTower as $asetTower )
+            @foreach ($maintenances as $maintenance )
             <tr>
-               <td>{{ $asetTower->tower->nama_tower }}</td>
-               <td>{{ $asetTower->tower->lokasi_tower }}</td>
-               <td>{{ $asetTower->nama_sparepart }}</td>
-               <td>{{ $asetTower->keterangan }}</td>
+               <td>{{ $maintenance->team->nama_team }}</td>
+               <td>{{ $maintenance->tower->nama_tower }}</td>
+               <td>{{ $maintenance->tanggal }}</td>
+               <td>{{ $maintenance->perbaikan }}</td>
+               <td>{{ $maintenance->keterangan }}</td>
+               <td>{{ $maintenance->status }}</td>
                <td>
-                  <span
-                     class="{{ $asetTower->tower->status_tower === 'aktif' ? 'badge badge-success' : 'badge badge-danger' }}">
-                     {{ $asetTower->tower->status_tower}}
-                  </span>
-               </td>
-               <td>
-                  <a href="{{ route('aset.edit', $asetTower->id) }}" class="btn btn-sm btn-warning">
+                  <a href="{{ route('maintenance.edit', $asetTower->id) }}" class="btn btn-sm btn-warning">
                      <i class="fas fa-tools" style="color: #ffffff"></i>
                   </a>
                   <a href="{{ route('aset.detail', $asetTower->id) }}" class="btn btn-sm btn-info">
                      <i class="fas fa-info-circle"></i>
                   </a>
-                  <form action="{{ route('aset.delete', $asetTower->id) }}" method="POST" class="d-inline">
+                  {{-- <form action="{{ route('aset.delete', $asetTower->id) }}" method="POST" class="d-inline">
                      @method('DELETE')
                      @csrf
                      <button type="submit" class="btn btn-sm btn-danger btn-submit"><i
                            class="fas fa-trash-alt"></i></button>
-                  </form>
+                  </form> --}}
                </td>
             </tr>
-            @endforeach --}}
+            @endforeach
          </tbody>
       </table>
    </div>
@@ -69,17 +66,17 @@
 
 @push('scripts')
 <script>
-   // $(function () {
-   //    $('#datatables').DataTable({
-   //       "paging": true,
-   //       "lengthChange": true,
-   //       "searching": true,
-   //       "ordering": true,
-   //       "info": true,
-   //       "autoWidth": true,
-   //       "responsive": true,
-   //    });
-   // });
+   $(function () {
+      $('#datatables').DataTable({
+         "paging": true,
+         "lengthChange": true,
+         "searching": true,
+         "ordering": true,
+         "info": true,
+         "autoWidth": true,
+         "responsive": true,
+      });
+   });
 
    // $('.btn-submit').click(function (e) {
    //    e.preventDefault();
