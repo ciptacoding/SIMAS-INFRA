@@ -74,6 +74,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/laporan-data-team', [LaporanController::class, 'team'])->name('laporan.team');
     Route::get('/tambah-laporan', [LaporanController::class, 'tambah'])->name('laporan.tambah');
     Route::get('/laporan/edit/{id}', [LaporanController::class, 'edit'])->name('laporan.edit');
+    Route::get('/laporan-download/{id}', [LaporanController::class, 'download'])->name('laporan.download');
     Route::post('/laporan', [LaporanController::class, 'simpan'])->name('laporan.simpan');
     Route::put('/laporan/{id}', [LaporanController::class, 'update'])->name('laporan.update');
     Route::delete('/laporan/{id}', [LaporanController::class, 'delete'])->name('laporan.delete');
