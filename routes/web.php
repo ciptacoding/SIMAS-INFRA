@@ -4,6 +4,7 @@ use App\Http\Controllers\AsetTowerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\MaintenanceController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TowerController;
@@ -50,6 +51,14 @@ Route::middleware('auth')->group(function () {
     Route::put('/update-aset/{id}', [AsetTowerController::class, 'update'])->name('aset.update');
     Route::delete('/delete-aset/{id}', [AsetTowerController::class, 'delete'])->name('aset.delete');
 
+    Route::get('/teams', [TeamController::class, 'index'])->name('teams.index');
+    Route::get('/teams/{id}', [TeamController::class, 'detail'])->name('teams.detail');
+    Route::get('/teams-tambah', [TeamController::class, 'tambah'])->name('teams.tambah');
+    Route::get('/teams/edit/{id}', [TeamController::class, 'edit'])->name('teams.edit');
+    Route::post('/teams', [TeamController::class, 'simpan'])->name('teams.simpan');
+    Route::put('/teams/{id}', [TeamController::class, 'update'])->name('teams.update');
+    Route::delete('/teams/{id}', [TeamController::class, 'delete'])->name('teams.delete');
+
     Route::get('/maintenances', [MaintenanceController::class, 'index'])->name('maintenance.index');
     Route::get('/maintenances/{id}', [MaintenanceController::class, 'detail'])->name('maintenance.detail');
     Route::get('/request-maintenance', [MaintenanceController::class, 'tambah'])->name('maintenance.tambah');
@@ -58,11 +67,15 @@ Route::middleware('auth')->group(function () {
     Route::put('/maintenances/{id}', [MaintenanceController::class, 'update'])->name('maintenance.update');
     Route::delete('/maintenance/{id}', [MaintenanceController::class, 'delete'])->name('maintenance.delete');
 
-    Route::get('/teams', [TeamController::class, 'index'])->name('teams.index');
-    Route::get('/teams/{id}', [TeamController::class, 'detail'])->name('teams.detail');
-    Route::get('/teams-tambah', [TeamController::class, 'tambah'])->name('teams.tambah');
-    Route::get('/teams/edit/{id}', [TeamController::class, 'edit'])->name('teams.edit');
-    Route::post('/teams', [TeamController::class, 'simpan'])->name('teams.simpan');
-    Route::put('/teams/{id}', [TeamController::class, 'update'])->name('teams.update');
-    Route::delete('/teams/{id}', [TeamController::class, 'delete'])->name('teams.delete');
+    Route::get('/laporan-maintenance', [LaporanController::class, 'maintenance'])->name('laporan.maintenance');
+    Route::get('/laporan-sparepart', [LaporanController::class, 'sparepart'])->name('laporan.sparepart');
+    Route::get('/laporan-req-maintenance', [LaporanController::class, 'reqMaintenance'])->name('laporan.request');
+    Route::get('/laporan-lokasi', [LaporanController::class, 'lokasi'])->name('laporan.lokasi');
+    Route::get('/laporan-data-team', [LaporanController::class, 'team'])->name('laporan.team');
+    Route::get('/tambah-laporan', [LaporanController::class, 'tambah'])->name('laporan.tambah');
+    Route::get('/laporan/edit/{id}', [LaporanController::class, 'edit'])->name('laporan.edit');
+    Route::get('/laporan-download/{id}', [LaporanController::class, 'download'])->name('laporan.download');
+    Route::post('/laporan', [LaporanController::class, 'simpan'])->name('laporan.simpan');
+    Route::put('/laporan/{id}', [LaporanController::class, 'update'])->name('laporan.update');
+    Route::delete('/laporan/{id}', [LaporanController::class, 'delete'])->name('laporan.delete');
 });

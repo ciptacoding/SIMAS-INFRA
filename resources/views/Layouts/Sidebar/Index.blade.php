@@ -89,31 +89,36 @@
                </a>
                <ul class="nav nav-treeview pb-5 mb-5">
                   <li class="nav-item">
-                     <a href="#" class="nav-link">
+                     <a href="{{ route('laporan.maintenance') }}"
+                        class="nav-link {{ Route::currentRouteName() === 'laporan.maintenance' ? 'active' : ' ' }}">
                         <i class="nav-icon fas fa-wrench"></i>
                         <p>Laporan Maintenance</p>
                      </a>
                   </li>
                   <li class="nav-item">
-                     <a href="#" class="nav-link">
+                     <a href="{{ route('laporan.sparepart') }}"
+                        class="nav-link {{ Route::currentRouteName() === 'laporan.sparepart' ? 'active' : ' ' }}">
                         <i class="nav-icon fas fa-tools"></i>
                         <p>Laporan Sparepart</p>
                      </a>
                   </li>
                   <li class="nav-item">
-                     <a href="#" class="nav-link">
+                     <a href="{{ route('laporan.request') }}"
+                        class="nav-link {{ Route::currentRouteName() === 'laporan.request' ? 'active' : ' ' }}">
                         <i class="nav-icon fas fa-inbox"></i>
                         <p>Request Maintenance</p>
                      </a>
                   </li>
                   <li class="nav-item">
-                     <a href="#" class="nav-link">
+                     <a href="{{ route('laporan.lokasi') }}"
+                        class="nav-link {{ Route::currentRouteName() === 'laporan.lokasi' ? 'active' : ' ' }}">
                         <i class="nav-icon fas fa-wifi"></i>
                         <p>Laporan Lokasi Tower</p>
                      </a>
                   </li>
                   <li class="nav-item">
-                     <a href="#" class="nav-link">
+                     <a href="{{ route('laporan.team') }}"
+                        class="nav-link {{ Route::currentRouteName() === 'laporan.team' ? 'active' : ' ' }}">
                         <i class="nav-icon fas fa-people-arrows"></i>
                         <p>Laporan Data Team</p>
                      </a>
