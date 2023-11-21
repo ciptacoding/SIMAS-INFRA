@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Laporan;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class LaporanController extends Controller
 {
@@ -37,6 +40,13 @@ class LaporanController extends Controller
         return view('Pages.Laporan.Team', compact('teams'));
     }
 
+    public function download($id)
+    {
+        $laporan = Laporan::findOrFail($id);
+        $pdf = Pdf::loadView('Pages.Laporan.LaporanPdf', compact('laporan'));
+        return $pdf->download('LaporanPdf.pdf');
+    }
+
     public function tambah()
     {
         return view('Pages.Laporan.Tambah');
@@ -44,6 +54,22 @@ class LaporanController extends Controller
 
     public function simpan(Request $request)
     {
+        $request->validate([
+            'jenis_laporan' => ['required'],
+            'judul' => ['required', 'max:255'],
+            'tanggal' => ['required'],
+            'content' => ['required'],
+        ]);
+
+        Laporan::create([
+            'user_id' => Auth::user()->id,
+            'jenis_laporan' => $request->jenis_laporan,
+            'judul' => $request->judul,
+            'tanggal' => $request->tanggal,
+            'content' => $request->content,
+        ]);
+
+        return redirect()->route('laporan.tambah')->with('success', 'Laporan Berhasil Dibuat!');
     }
 
     public function edit($id)
@@ -55,9 +81,30 @@ class LaporanController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'jenis_laporan' => ['required'],
+            'judul' => ['required', 'max:255'],
+            'tanggal' => ['required'],
+            'content' => ['required'],
+        ]);
+
+        $laporan = Laporan::findOrFail($id);
+
+        $laporan->update([
+            'user_id' => Auth::user()->id,
+            'jenis_laporan' => $request->jenis_laporan,
+            'judul' => $request->judul,
+            'tanggal' => $request->tanggal,
+            'content' => $request->content,
+        ]);
+
+        return Redirect::to(url()->previous())->with('success', 'Laporan berhasil diupdate!');
     }
 
     public function delete($id)
     {
+        $laporan = Laporan::findOrFail($id);
+        $laporan->delete();
+        return Redirect::to(url()->previous());
     }
 }
