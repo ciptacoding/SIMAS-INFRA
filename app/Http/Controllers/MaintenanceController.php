@@ -19,6 +19,8 @@ class MaintenanceController extends Controller
     // method untuk menampilkan halaman detail maintenance
     public function detail($id)
     {
+        $maintenance = Maintenance::findOrFail($id);
+        return view('Pages.Maintenance.Detail', compact('maintenance'));
     }
 
     // method untuk menampilkan form tambah maintenance
@@ -32,20 +34,31 @@ class MaintenanceController extends Controller
     // method untuk menyimpan hasil dari tambah maintenance
     public function simpan(Request $request)
     {
-    }
+        $request->validate([
+            'team_id' => ['required'],
+            'tower_id' => ['required'],
+            'tanggal' => ['required', 'date'],
+            'keterangan' => ['required', 'max:255'],
+            'rincian_perbaikan' => ['required']
+        ]);
 
-    // method untuk menampilkan form edit maintenance
-    public function edit(Request $request, $id)
-    {
-    }
+        Maintenance::create([
+            'team_id' => $request->team_id,
+            'tower_id' => $request->tower_id,
+            'tanggal' => $request->tanggal,
+            'keterangan' => $request->keterangan,
+            'rincian_perbaikan' => $request->rincian_perbaikan,
+            'status' => 'Sedang direview'
+        ]);
 
-    // method untuk menyimpan hasil edit maintenance
-    public function update(Request $request, $id)
-    {
+        return redirect()->route('maintenance.index');
     }
 
     // method untuk melakukan delete item maintenance
     public function delete($id)
     {
+        $maintenance = Maintenance::findOrFail($id);
+        $maintenance->delete();
+        return redirect()->route('maintenance.index');
     }
 }
