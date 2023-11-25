@@ -26,8 +26,6 @@
                <th>Tim Pelaksana</th>
                <th>Nama Tower</th>
                <th>Tanggal</th>
-               <th>Perbaikan</th>
-               <th>Keterangan</th>
                <th>Status</th>
                <th>Aksi</th>
             </tr>
@@ -38,22 +36,17 @@
                <td>{{ $maintenance->team->nama_team }}</td>
                <td>{{ $maintenance->tower->nama_tower }}</td>
                <td>{{ $maintenance->tanggal }}</td>
-               <td>{{ $maintenance->perbaikan }}</td>
-               <td>{{ $maintenance->keterangan }}</td>
                <td>{{ $maintenance->status }}</td>
                <td>
-                  <a href="{{ route('maintenance.edit', $asetTower->id) }}" class="btn btn-sm btn-warning">
-                     <i class="fas fa-tools" style="color: #ffffff"></i>
-                  </a>
-                  <a href="{{ route('aset.detail', $asetTower->id) }}" class="btn btn-sm btn-info">
+                  <a href="{{ route('maintenance.detail', $maintenance->id) }}" class="btn btn-sm btn-info">
                      <i class="fas fa-info-circle"></i>
                   </a>
-                  {{-- <form action="{{ route('aset.delete', $asetTower->id) }}" method="POST" class="d-inline">
+                  <form action="{{ route('maintenance.delete', $maintenance->id) }}" method="POST" class="d-inline">
                      @method('DELETE')
                      @csrf
                      <button type="submit" class="btn btn-sm btn-danger btn-submit"><i
                            class="fas fa-trash-alt"></i></button>
-                  </form> --}}
+                  </form>
                </td>
             </tr>
             @endforeach
@@ -78,23 +71,23 @@
       });
    });
 
-   // $('.btn-submit').click(function (e) {
-   //    e.preventDefault();
-   //    const deleteForm = $(this).closest('form');
+   $('.btn-submit').click(function (e) {
+      e.preventDefault();
+      const deleteForm = $(this).closest('form');
 
-   //    Swal.fire({
-   //       title: "Are you sure?",
-   //       text: "You won't be able to revert this!",
-   //       icon: "warning",
-   //       showCancelButton: true,
-   //       confirmButtonColor: "#3085d6",
-   //       cancelButtonColor: "#d33",
-   //       confirmButtonText: "Yes, delete it!"
-   //    }).then((result) => {
-   //       if (result.isConfirmed) {
-   //          deleteForm.submit();
-   //       }
-   //    });
-   // });
+      Swal.fire({
+         title: "Are you sure?",
+         text: "You won't be able to revert this!",
+         icon: "warning",
+         showCancelButton: true,
+         confirmButtonColor: "#3085d6",
+         cancelButtonColor: "#d33",
+         confirmButtonText: "Yes, delete it!"
+      }).then((result) => {
+         if (result.isConfirmed) {
+               deleteForm.submit();
+            }
+         });
+      });
 </script>
 @endpush
