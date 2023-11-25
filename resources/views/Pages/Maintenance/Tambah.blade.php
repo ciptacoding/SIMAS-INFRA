@@ -26,15 +26,15 @@
          <div class="row">
             <div class="col-md-6">
                <div class="form-group">
-                  <label for="ketua_tim">Ketua Tim</label>
-                  <select name="ketua_tim" class="form-control select2bs4 @error('ketua_tim') is-invalid @enderror"
+                  <label for="tower_id">Nama Tower</label>
+                  <select name="tower_id" class="form-control select2bs4 @error('tower_id') is-invalid @enderror"
                      style="width: 100%;">
-                     <option value="">Pilih Ketua Tim</option>
-                     @foreach ($ketuaTim as $ketua)
-                     <option value="{{ $ketua->id }}">{{ $ketua->username }}</option>
+                     <option value="">Pilih Nama Tower</option>
+                     @foreach ($towers as $tower)
+                     <option value="{{ $tower->id }}">{{ $tower->nama_tower }}</option>
                      @endforeach
                   </select>
-                  @error('ketua_tim')
+                  @error('tower_id')
                   <div class="invalid-feedback">{{ $message }}</div>
                   @enderror
                </div>
@@ -42,10 +42,40 @@
 
             <div class="col-md-6">
                <div class="form-group">
-                  <label for="nama_team">Nama Team</label>
-                  <input type="text" class="form-control @error('nama_team') is-invalid @enderror" id="nama_team"
-                     name="nama_team" placeholder="masukkan nama tim" value="{{ old('nama_team') }}">
-                  @error('nama_team')
+                  <label for="team_id">Tim Yang Ditugaskan</label>
+                  <select name="team_id" class="form-control select2bs4 @error('team_id') is-invalid @enderror"
+                     style="width: 100%;">
+                     <option value="">Pilih Nama Tim</option>
+                     @foreach ($teams as $team)
+                     <option value="{{ $team->id }}">{{ $team->nama_team }}</option>
+                     @endforeach
+                  </select>
+                  @error('team_id')
+                  <div class="invalid-feedback">{{ $message }}</div>
+                  @enderror
+               </div>
+            </div>
+
+         </div>
+
+         <div class="row">
+            <div class="col-md-6">
+               <div class="form-group">
+                  <label for="tanggal">Tanggal Pelaksanaan</label>
+                  <input type="date" class="form-control @error('tanggal') is-invalid @enderror" id="tanggal"
+                     name="tanggal" placeholder="Masukkan tanggal pelaksanaan" value="{{ old('tanggal') }}">
+                  @error('tanggal')
+                  <div class="invalid-feedback">{{ $message }}</div>
+                  @enderror
+               </div>
+            </div>
+
+            <div class="col-md-6">
+               <div class="form-group">
+                  <label for="keterangan">Keterangan</label>
+                  <input type="text" class="form-control @error('keterangan') is-invalid @enderror" id="keterangan"
+                     name="keterangan" placeholder="Masukkan keterangan perbaikan" value="{{ old('keterangan') }}">
+                  @error('keterangan')
                   <div class="invalid-feedback">{{ $message }}</div>
                   @enderror
                </div>
@@ -53,24 +83,14 @@
          </div>
 
          <div class="row">
-            <div class="col-md-6">
+            <div class="col-12">
                <div class="form-group">
-                  <label for="tugas">Tugas</label>
-                  <input type="text" class="form-control @error('tugas') is-invalid @enderror" id="tugas" name="tugas"
-                     placeholder="Masukkan tugas dari tim" value="{{ old('tugas') }}">
-                  @error('tugas')
-                  <div class="invalid-feedback">{{ $message }}</div>
-                  @enderror
-               </div>
-            </div>
-
-            <div class="col-md-6">
-               <div class="form-group">
-                  <label for="jumlah_anggota">Jumlah Anggota</label>
-                  <input type="text" class="form-control @error('jumlah_anggota') is-invalid @enderror"
-                     id="jumlah_anggota" name="jumlah_anggota" placeholder="Masukkan jumlah anggota dari tim"
-                     value="{{ old('jumlah_anggota') }}">
-                  @error('jumlah_anggota')
+                  <label for="rincian_perbaikan">Rincian Perbaikan</label>
+                  <textarea id="summernote" name="rincian_perbaikan" id="rincian_perbaikan"
+                     class="form-control @error('rincian_perbaikan') is-invalid @enderror">
+                                             Tuliskan <em>rincian</em> <u>perbaikan</u> <strong>disini</strong>
+                                          </textarea>
+                  @error('rincian_perbaikan')
                   <div class="invalid-feedback">{{ $message }}</div>
                   @enderror
                </div>
@@ -90,6 +110,11 @@
       $('.select2bs4').select2({
          theme: 'bootstrap4'
       });
+   });
+
+   $(function () {
+      // Summernote
+      $('#summernote').summernote()
    });
 </script>
 @endpush
