@@ -41,9 +41,9 @@
                   <a href="{{ route('laporan.edit', $team->id) }}" class="btn btn-sm btn-warning">
                      <i class="fas fa-tools" style="color: #ffffff"></i>
                   </a>
-                  {{-- <a href="{{ route('teams.detail', $team->id) }}" class="btn btn-sm btn-info">
-                     <i class="fas fa-info-circle"></i>
-                  </a> --}}
+                  <a href="{{ route('laporan.download', $team->id) }}" class="btn btn-sm btn-info" title="Download PDF">
+                     <i class="fas fa-download"></i>
+                  </a>
                   <form action="{{ route('laporan.delete', $team->id) }}" method="POST" class="d-inline">
                      @method('DELETE')
                      @csrf
