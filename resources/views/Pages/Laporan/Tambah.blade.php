@@ -72,7 +72,7 @@
                <div class="form-group">
                   <label for="content">Konten</label>
                   <textarea id="summernote" name="content" id="content"
-                     class="form-control @error('tanggal') is-invalid @enderror">
+                     class="form-control @error('content') is-invalid @enderror">
                      Tuliskan <em>dokumen</em> <u>laporan</u> <strong>disini</strong>
                   </textarea>
                   @error('content')
