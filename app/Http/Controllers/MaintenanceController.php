@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Maintenance;
 use App\Models\Team;
+use App\Models\User;
 use App\Models\Tower;
+use App\Models\Maintenance;
+use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class MaintenanceController extends Controller
 {
@@ -17,10 +19,11 @@ class MaintenanceController extends Controller
     }
 
     // method untuk menampilkan halaman detail maintenance
-    public function detail($id)
+    public function generatePenugasan($id)
     {
-        $maintenance = Maintenance::findOrFail($id);
-        return view('Pages.Maintenance.Detail', compact('maintenance'));
+        $suratTugas = Maintenance::findOrFail($id);
+        $pdf = Pdf::loadView('Pages.Maintenance.SuratTugas', compact('suratTugas'));
+        return $pdf->download('SuratTugas.pdf');
     }
 
     // method untuk menampilkan form tambah maintenance
@@ -51,6 +54,37 @@ class MaintenanceController extends Controller
             'status' => 'Sedang direview'
         ]);
 
+        return redirect()->route('maintenance.notification');
+    }
+
+    public function notification()
+    {
+
+        $superAdmin = User::where('role_id', '1')->first(); //ganti sesuai nomor wa superadmin
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://api.fonnte.com/send',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_POSTFIELDS => array(
+                'target' => $superAdmin->whatsapp,
+                'message' => 'Hallo, ada notifikasi request maintenance baru nih', //sesuaikan pesan
+            ),
+            CURLOPT_HTTPHEADER => array(
+                'Authorization: cdQtA3F3MnNJmFVqgXk!' //change TOKEN to your actual token
+            ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        echo $response;
         return redirect()->route('maintenance.index');
     }
 

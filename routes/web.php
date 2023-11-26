@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\MaintenanceController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TowerController;
 use App\Http\Controllers\UserController;
@@ -60,10 +61,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('/teams/{id}', [TeamController::class, 'delete'])->name('teams.delete');
 
     Route::get('/maintenances', [MaintenanceController::class, 'index'])->name('maintenance.index');
-    Route::get('/maintenances/{id}', [MaintenanceController::class, 'detail'])->name('maintenance.detail');
+    Route::get('/maintenances/{id}', [MaintenanceController::class, 'generatePenugasan'])->name('generate.penugasan');
     Route::get('/request-maintenance', [MaintenanceController::class, 'tambah'])->name('maintenance.tambah');
+    Route::get('/maintenance-notification', [MaintenanceController::class, 'notification'])->name('maintenance.notification');
     Route::post('/maintenances', [MaintenanceController::class, 'simpan'])->name('maintenance.simpan');
     Route::delete('/maintenance/{id}', [MaintenanceController::class, 'delete'])->name('maintenance.delete');
+
+    Route::get('/notifications', [NotificationController::class, 'index'])->name('notification.index');
+    Route::get('/notifications/{id}', [NotificationController::class, 'detail'])->name('notification.detail');
+    Route::patch('/notifications-accept/{id}', [NotificationController::class, 'accept'])->name('notification.accept');
+    Route::patch('/notifications-decline/{id}', [NotificationController::class, 'decline'])->name('notification.decline');
 
     Route::get('/laporan-maintenance', [LaporanController::class, 'maintenance'])->name('laporan.maintenance');
     Route::get('/laporan-sparepart', [LaporanController::class, 'sparepart'])->name('laporan.sparepart');
