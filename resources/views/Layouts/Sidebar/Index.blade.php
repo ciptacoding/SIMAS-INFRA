@@ -71,11 +71,12 @@
                </a>
             </li>
             <li class="nav-item">
-               <a href="#" class="nav-link">
+               <a href="{{ route('notification.index') }}"
+                  class="nav-link {{ Route::currentRouteName() === 'notification.index' ? 'active' : ' ' }}">
                   <i class="nav-icon fas fa-bell"></i>
                   <p>
                      Kelola Notifikasi
-                     <span class="badge badge-info right">2</span>
+                     <span class="badge badge-info right">!</span>
                   </p>
                </a>
             </li>

@@ -26,6 +26,7 @@
                <th>Tim Pelaksana</th>
                <th>Nama Tower</th>
                <th>Tanggal</th>
+               <th>Keterangan</th>
                <th>Status</th>
                <th>Aksi</th>
             </tr>
@@ -36,11 +37,15 @@
                <td>{{ $maintenance->team->nama_team }}</td>
                <td>{{ $maintenance->tower->nama_tower }}</td>
                <td>{{ $maintenance->tanggal }}</td>
+               <td>{{ $maintenance->keterangan }}</td>
                <td>{{ $maintenance->status }}</td>
                <td>
-                  <a href="{{ route('maintenance.detail', $maintenance->id) }}" class="btn btn-sm btn-info">
-                     <i class="fas fa-info-circle"></i>
+                  @if ($maintenance->status === 'disetujui')
+                  <a href="{{ route('generate.penugasan', $maintenance->id) }}" class="btn btn-sm btn-info"
+                     title="Generate Surat Penugasan">
+                     <i class="fas fa-download"></i>
                   </a>
+                  @endif
                   <form action="{{ route('maintenance.delete', $maintenance->id) }}" method="POST" class="d-inline">
                      @method('DELETE')
                      @csrf
