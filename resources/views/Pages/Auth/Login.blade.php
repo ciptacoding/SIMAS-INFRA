@@ -34,26 +34,15 @@
                </div>
             </div>
             <div class="row">
-               <div class="col-8">
-                  <div class="icheck-primary">
-                     <input type="checkbox" id="remember" name="remember">
-                     <label for="remember">
-                        Remember Me
-                     </label>
-                  </div>
-               </div>
+
                <!-- /.col -->
-               <div class="col-4">
+               <div class="col-12 mt-2 mb-3">
                   <button type="submit" class="btn btn-dark btn-block">Sign In</button>
                </div>
                <!-- /.col -->
             </div>
          </form>
          <!-- /.social-auth-links -->
-
-         <p class="mb-1">
-            <a href="#">I forgot my password</a>
-         </p>
       </div>
       <!-- /.login-card-body -->
    </div>
