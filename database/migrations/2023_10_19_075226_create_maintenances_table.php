@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('maintenances', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('team_id');
+            $table->foreignId('team_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignId('tower_id');
             $table->date('tanggal');
             $table->text('rincian_perbaikan');
